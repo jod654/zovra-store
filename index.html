@@ -38,9 +38,7 @@ header{
   color:#fff;
 }
 
-.logo span{
-  color:#35d6ff;
-}
+.logo span{color:#35d6ff}
 
 .search{
   flex:1;
@@ -89,9 +87,7 @@ header{
   margin-bottom:20px;
 }
 
-.hero h1 span{
-  color:#35d6ff;
-}
+.hero h1 span{color:#35d6ff}
 
 .hero p{
   color:#aeb6c2;
@@ -124,9 +120,7 @@ header{
   margin-bottom:25px;
 }
 
-.section-title h2{
-  font-size:28px;
-}
+.section-title h2{font-size:28px}
 
 .categories{
   display:flex;
@@ -239,7 +233,122 @@ footer{
   color:#7f8997;
 }
 
+/* AUTH MODAL */
+
+.auth-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.80);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:1000;
+  padding:20px;
+}
+
+.auth-box{
+  width:100%;
+  max-width:420px;
+  background:#14181e;
+  border:1px solid #303640;
+  border-radius:18px;
+  padding:28px;
+  box-shadow:0 20px 60px rgba(0,0,0,.5);
+}
+
+.auth-box h2{
+  font-size:28px;
+  margin-bottom:8px;
+}
+
+.auth-subtitle{
+  color:#8f99a7;
+  margin-bottom:22px;
+}
+
+.auth-box input{
+  width:100%;
+  padding:13px 14px;
+  margin-bottom:12px;
+  border-radius:9px;
+  border:1px solid #353c47;
+  background:#0f1216;
+  color:#fff;
+  outline:none;
+}
+
+.auth-box input:focus{
+  border-color:#35d6ff;
+}
+
+.auth-main-btn{
+  width:100%;
+  padding:13px;
+  border:0;
+  border-radius:9px;
+  background:#35d6ff;
+  color:#071014;
+  font-weight:800;
+  cursor:pointer;
+  margin-top:4px;
+}
+
+.auth-switch{
+  margin-top:18px;
+  text-align:center;
+  color:#8f99a7;
+  font-size:14px;
+}
+
+.auth-switch button{
+  background:none;
+  border:0;
+  color:#35d6ff;
+  cursor:pointer;
+  font-weight:700;
+}
+
+.auth-close{
+  float:right;
+  background:none;
+  border:0;
+  color:#aaa;
+  font-size:22px;
+  cursor:pointer;
+}
+
+.auth-message{
+  min-height:20px;
+  margin:10px 0;
+  font-size:14px;
+}
+
+.account-box{
+  display:none;
+  margin-top:15px;
+  padding:14px;
+  border-radius:10px;
+  background:#0f1216;
+}
+
+.account-box p{
+  color:#c8d0da;
+  margin-bottom:10px;
+  word-break:break-word;
+}
+
+.logout-btn{
+  width:100%;
+  padding:10px;
+  border:1px solid #353c47;
+  background:#20252d;
+  color:white;
+  border-radius:8px;
+  cursor:pointer;
+}
+
 @media(max-width:700px){
+
   .nav{
     flex-wrap:wrap;
   }
@@ -268,6 +377,7 @@ footer{
 <body>
 
 <header>
+
   <div class="nav">
 
     <div class="logo">
@@ -275,23 +385,36 @@ footer{
     </div>
 
     <div class="search">
+
       <input
         id="searchInput"
         type="search"
         placeholder="Search products, categories and more..."
       >
+
     </div>
 
-    <button class="nav-btn">♡</button>
-    <button class="nav-btn" id="cartButton">🛒 0</button>
-    <button class="nav-btn">👤 Login</button>
+    <button class="nav-btn">
+      ♡
+    </button>
+
+    <button class="nav-btn" id="cartButton">
+      🛒 0
+    </button>
+
+    <button class="nav-btn" id="loginButton">
+      👤 Login
+    </button>
 
   </div>
+
 </header>
+
 
 <section class="hero">
 
   <div>
+
     <h1>
       Shop <span>Different.</span>
     </h1>
@@ -304,15 +427,18 @@ footer{
     <button onclick="scrollToProducts()">
       Explore Products →
     </button>
+
   </div>
 
 </section>
+
 
 <main class="container">
 
   <div class="section-title">
     <h2>Explore Categories</h2>
   </div>
+
 
   <div class="categories">
 
@@ -342,13 +468,23 @@ footer{
 
   </div>
 
+
   <div class="section-title" id="productsSection">
-    <h2>🔥 Trending Now</h2>
+
+    <h2>
+      🔥 Trending Now
+    </h2>
+
   </div>
+
 
   <div class="products" id="products">
 
+
+    <!-- PRODUCT 1 -->
+
     <article class="product" data-category="electronics">
+
       <img
         class="product-img"
         src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=80"
@@ -357,29 +493,50 @@ footer{
 
       <div class="product-info">
 
-        <h3>Smart Watch</h3>
+        <h3>
+          Smart Watch
+        </h3>
 
         <p>
           Stylish everyday smartwatch.
         </p>
 
         <div>
-          <span class="price">₹899</span>
-          <span class="old-price">₹1,499</span>
+
+          <span class="price">
+            ₹899
+          </span>
+
+          <span class="old-price">
+            ₹1,499
+          </span>
+
         </div>
 
         <div class="actions">
-          <button class="cart-btn" onclick="addToCart()">
+
+          <button
+            class="cart-btn"
+            onclick="addToCart()"
+          >
             Add to Cart
           </button>
 
-          <button class="buy-btn" onclick="buyNow('Smart Watch',899)">
+          <button
+            class="buy-btn"
+            onclick="buyNow('Smart Watch',899)"
+          >
             Buy Now
           </button>
+
         </div>
 
       </div>
+
     </article>
+
+
+    <!-- PRODUCT 2 -->
 
     <article class="product" data-category="home">
 
@@ -391,24 +548,39 @@ footer{
 
       <div class="product-info">
 
-        <h3>Modern Home Essential</h3>
+        <h3>
+          Modern Home Essential
+        </h3>
 
         <p>
           Upgrade your everyday home setup.
         </p>
 
         <div>
-          <span class="price">₹699</span>
-          <span class="old-price">₹999</span>
+
+          <span class="price">
+            ₹699
+          </span>
+
+          <span class="old-price">
+            ₹999
+          </span>
+
         </div>
 
         <div class="actions">
 
-          <button class="cart-btn" onclick="addToCart()">
+          <button
+            class="cart-btn"
+            onclick="addToCart()"
+          >
             Add to Cart
           </button>
 
-          <button class="buy-btn" onclick="buyNow('Modern Home Essential',699)">
+          <button
+            class="buy-btn"
+            onclick="buyNow('Modern Home Essential',699)"
+          >
             Buy Now
           </button>
 
@@ -417,6 +589,9 @@ footer{
       </div>
 
     </article>
+
+
+    <!-- PRODUCT 3 -->
 
     <article class="product" data-category="fashion">
 
@@ -428,24 +603,39 @@ footer{
 
       <div class="product-info">
 
-        <h3>Trending Fashion</h3>
+        <h3>
+          Trending Fashion
+        </h3>
 
         <p>
           Modern style for everyday wear.
         </p>
 
         <div>
-          <span class="price">₹799</span>
-          <span class="old-price">₹1,299</span>
+
+          <span class="price">
+            ₹799
+          </span>
+
+          <span class="old-price">
+            ₹1,299
+          </span>
+
         </div>
 
         <div class="actions">
 
-          <button class="cart-btn" onclick="addToCart()">
+          <button
+            class="cart-btn"
+            onclick="addToCart()"
+          >
             Add to Cart
           </button>
 
-          <button class="buy-btn" onclick="buyNow('Trending Fashion',799)">
+          <button
+            class="buy-btn"
+            onclick="buyNow('Trending Fashion',799)"
+          >
             Buy Now
           </button>
 
@@ -454,6 +644,9 @@ footer{
       </div>
 
     </article>
+
+
+    <!-- PRODUCT 4 -->
 
     <article class="product" data-category="fitness">
 
@@ -465,24 +658,39 @@ footer{
 
       <div class="product-info">
 
-        <h3>Fitness Essential</h3>
+        <h3>
+          Fitness Essential
+        </h3>
 
         <p>
           Useful equipment for your fitness routine.
         </p>
 
         <div>
-          <span class="price">₹599</span>
-          <span class="old-price">₹899</span>
+
+          <span class="price">
+            ₹599
+          </span>
+
+          <span class="old-price">
+            ₹899
+          </span>
+
         </div>
 
         <div class="actions">
 
-          <button class="cart-btn" onclick="addToCart()">
+          <button
+            class="cart-btn"
+            onclick="addToCart()"
+          >
             Add to Cart
           </button>
 
-          <button class="buy-btn" onclick="buyNow('Fitness Essential',599)">
+          <button
+            class="buy-btn"
+            onclick="buyNow('Fitness Essential',599)"
+          >
             Buy Now
           </button>
 
@@ -496,9 +704,12 @@ footer{
 
 </main>
 
+
 <footer>
 
-  <strong>ZOVRA</strong>
+  <strong>
+    ZOVRA
+  </strong>
 
   <p style="margin-top:10px;">
     Shop Different. Live Better.
@@ -510,30 +721,186 @@ footer{
 
 </footer>
 
+
+<!-- LOGIN / REGISTER MODAL -->
+
+<div
+  class="auth-overlay"
+  id="authOverlay"
+>
+
+  <div class="auth-box">
+
+    <button
+      class="auth-close"
+      onclick="closeAuth()"
+    >
+      ×
+    </button>
+
+
+    <h2 id="authTitle">
+      Login to ZOVRA
+    </h2>
+
+    <p
+      class="auth-subtitle"
+      id="authSubtitle"
+    >
+      Welcome back. Login to continue.
+    </p>
+
+
+    <div
+      id="registerNameBox"
+      style="display:none;"
+    >
+
+      <input
+        id="registerName"
+        type="text"
+        placeholder="Full Name"
+        autocomplete="name"
+      >
+
+    </div>
+
+
+    <input
+      id="authEmail"
+      type="email"
+      placeholder="Email address"
+      autocomplete="email"
+    >
+
+
+    <input
+      id="authPassword"
+      type="password"
+      placeholder="Password"
+      autocomplete="current-password"
+    >
+
+
+    <div
+      class="auth-message"
+      id="authMessage"
+    ></div>
+
+
+    <button
+      class="auth-main-btn"
+      id="authSubmit"
+      onclick="handleAuth()"
+    >
+      Login
+    </button>
+
+
+    <div class="auth-switch">
+
+      <span id="switchText">
+        Don't have an account?
+      </span>
+
+      <button
+        onclick="toggleAuthMode()"
+        id="switchButton"
+      >
+        Register
+      </button>
+
+    </div>
+
+
+    <div
+      class="account-box"
+      id="accountBox"
+    >
+
+      <p>
+        Logged in as:
+        <strong id="accountEmail"></strong>
+      </p>
+
+      <button
+        class="logout-btn"
+        onclick="logoutUser()"
+      >
+        Logout
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- SUPABASE JAVASCRIPT LIBRARY -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
 <script>
 
+/* =========================================================
+   SUPABASE CONFIGURATION
+   ========================================================= */
+
+const SUPABASE_URL =
+  "https://lfcygcjrqfxhaalhqqaz.supabase.co";
+
+const SUPABASE_PUBLISHABLE_KEY =
+  "sb_publishable_Cvp6MCG6KGI6gLDRGcWKtw__WBNCYCz";
+
+
+const supabaseClient =
+  window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_PUBLISHABLE_KEY
+  );
+
+
+/* =========================================================
+   CART
+   ========================================================= */
+
 let cartCount = 0;
+
 
 function addToCart(){
 
   cartCount++;
 
-  document.getElementById("cartButton").innerText =
-    "🛒 " + cartCount;
+  document
+    .getElementById("cartButton")
+    .innerText =
+      "🛒 " + cartCount;
 
 }
+
+
+/* =========================================================
+   BUY NOW
+   ========================================================= */
 
 function buyNow(product,price){
 
   alert(
     "Selected Product: " +
     product +
-    "\\nPrice: ₹" +
+    "\nPrice: ₹" +
     price +
-    "\\n\\nCheckout system will be connected next."
+    "\n\nCheckout system will be connected next."
   );
 
 }
+
+
+/* =========================================================
+   SCROLL TO PRODUCTS
+   ========================================================= */
 
 function scrollToProducts(){
 
@@ -545,64 +912,612 @@ function scrollToProducts(){
 
 }
 
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
 document
   .getElementById("searchInput")
-  .addEventListener("input",function(){
+  .addEventListener(
+    "input",
+    function(){
 
-    const query =
-      this.value.toLowerCase().trim();
+      const query =
+        this.value
+          .toLowerCase()
+          .trim();
 
-    document
-      .querySelectorAll(".product")
-      .forEach(function(product){
-
-        const text =
-          product.innerText.toLowerCase();
-
-        product.style.display =
-          text.includes(query)
-          ? ""
-          : "none";
-
-      });
-
-  });
-
-document
-  .querySelectorAll(".category")
-  .forEach(function(button){
-
-    button.addEventListener("click",function(){
-
-      document
-        .querySelectorAll(".category")
-        .forEach(function(btn){
-          btn.classList.remove("active");
-        });
-
-      this.classList.add("active");
-
-      const category =
-        this.dataset.category;
 
       document
         .querySelectorAll(".product")
-        .forEach(function(product){
+        .forEach(
+          function(product){
 
-          if(
-            category === "all" ||
-            product.dataset.category === category
-          ){
-            product.style.display = "";
-          }else{
-            product.style.display = "none";
+            const text =
+              product
+                .innerText
+                .toLowerCase();
+
+
+            product.style.display =
+              text.includes(query)
+              ? ""
+              : "none";
+
+          }
+        );
+
+    }
+  );
+
+
+/* =========================================================
+   CATEGORIES
+   ========================================================= */
+
+document
+  .querySelectorAll(".category")
+  .forEach(
+    function(button){
+
+      button.addEventListener(
+        "click",
+        function(){
+
+          document
+            .querySelectorAll(".category")
+            .forEach(
+              function(btn){
+
+                btn.classList
+                  .remove("active");
+
+              }
+            );
+
+
+          this.classList
+            .add("active");
+
+
+          const category =
+            this.dataset.category;
+
+
+          document
+            .querySelectorAll(".product")
+            .forEach(
+              function(product){
+
+                if(
+                  category === "all" ||
+                  product.dataset.category === category
+                ){
+
+                  product.style.display = "";
+
+                }else{
+
+                  product.style.display = "none";
+
+                }
+
+              }
+            );
+
+        }
+      );
+
+    }
+  );
+
+
+/* =========================================================
+   AUTH UI
+   ========================================================= */
+
+let authMode = "login";
+
+
+const authOverlay =
+  document.getElementById(
+    "authOverlay"
+  );
+
+
+const authTitle =
+  document.getElementById(
+    "authTitle"
+  );
+
+
+const authSubtitle =
+  document.getElementById(
+    "authSubtitle"
+  );
+
+
+const authSubmit =
+  document.getElementById(
+    "authSubmit"
+  );
+
+
+const registerNameBox =
+  document.getElementById(
+    "registerNameBox"
+  );
+
+
+const switchText =
+  document.getElementById(
+    "switchText"
+  );
+
+
+const switchButton =
+  document.getElementById(
+    "switchButton"
+  );
+
+
+const authMessage =
+  document.getElementById(
+    "authMessage"
+  );
+
+
+const accountBox =
+  document.getElementById(
+    "accountBox"
+  );
+
+
+const accountEmail =
+  document.getElementById(
+    "accountEmail"
+  );
+
+
+/* =========================================================
+   OPEN LOGIN
+   ========================================================= */
+
+document
+  .getElementById("loginButton")
+  .addEventListener(
+    "click",
+    function(){
+
+      openAuth();
+
+    }
+  );
+
+
+function openAuth(){
+
+  authOverlay.style.display =
+    "flex";
+
+}
+
+
+function closeAuth(){
+
+  authOverlay.style.display =
+    "none";
+
+  clearAuthMessage();
+
+}
+
+
+/* =========================================================
+   LOGIN / REGISTER TOGGLE
+   ========================================================= */
+
+function toggleAuthMode(){
+
+  authMode =
+    authMode === "login"
+      ? "register"
+      : "login";
+
+
+  updateAuthUI();
+
+}
+
+
+function updateAuthUI(){
+
+  clearAuthMessage();
+
+
+  if(authMode === "register"){
+
+    authTitle.innerText =
+      "Create ZOVRA Account";
+
+
+    authSubtitle.innerText =
+      "Register with your email and password.";
+
+
+    authSubmit.innerText =
+      "Create Account";
+
+
+    registerNameBox.style.display =
+      "block";
+
+
+    switchText.innerText =
+      "Already have an account?";
+
+
+    switchButton.innerText =
+      "Login";
+
+
+  }else{
+
+    authTitle.innerText =
+      "Login to ZOVRA";
+
+
+    authSubtitle.innerText =
+      "Welcome back. Login to continue.";
+
+
+    authSubmit.innerText =
+      "Login";
+
+
+    registerNameBox.style.display =
+      "none";
+
+
+    switchText.innerText =
+      "Don't have an account?";
+
+
+    switchButton.innerText =
+      "Register";
+
+  }
+
+}
+
+
+/* =========================================================
+   AUTH MESSAGE
+   ========================================================= */
+
+function showAuthMessage(
+  message,
+  isError = true
+){
+
+  authMessage.innerText =
+    message;
+
+
+  authMessage.style.color =
+    isError
+      ? "#ff6b6b"
+      : "#35d6ff";
+
+}
+
+
+function clearAuthMessage(){
+
+  authMessage.innerText = "";
+
+}
+
+
+/* =========================================================
+   REGISTER / LOGIN
+   ========================================================= */
+
+async function handleAuth(){
+
+  clearAuthMessage();
+
+
+  const email =
+    document
+      .getElementById("authEmail")
+      .value
+      .trim();
+
+
+  const password =
+    document
+      .getElementById("authPassword")
+      .value;
+
+
+  if(!email || !password){
+
+    showAuthMessage(
+      "Please enter email and password."
+    );
+
+    return;
+
+  }
+
+
+  /* =========================
+     REGISTER
+     ========================= */
+
+  if(authMode === "register"){
+
+    const name =
+      document
+        .getElementById("registerName")
+        .value
+        .trim();
+
+
+    if(!name){
+
+      showAuthMessage(
+        "Please enter your name."
+      );
+
+      return;
+
+    }
+
+
+    if(password.length < 6){
+
+      showAuthMessage(
+        "Password must be at least 6 characters."
+      );
+
+      return;
+
+    }
+
+
+    const {
+      data,
+      error
+    } =
+      await supabaseClient.auth.signUp({
+
+        email:email,
+
+        password:password,
+
+        options:{
+
+          data:{
+            full_name:name
           }
 
-        });
+        }
 
-    });
+      });
 
-  });
+
+    if(error){
+
+      showAuthMessage(
+        error.message
+      );
+
+      return;
+
+    }
+
+
+    if(data.session){
+
+      showAuthMessage(
+        "Account created and logged in successfully!",
+        false
+      );
+
+      updateLoggedInUI(
+        data.user
+      );
+
+    }else{
+
+      showAuthMessage(
+        "Account created. Please check your email to confirm your account.",
+        false
+      );
+
+    }
+
+
+    return;
+
+  }
+
+
+  /* =========================
+     LOGIN
+     ========================= */
+
+  const {
+    data,
+    error
+  } =
+    await supabaseClient.auth
+      .signInWithPassword({
+
+        email:email,
+
+        password:password
+
+      });
+
+
+  if(error){
+
+    showAuthMessage(
+      error.message
+    );
+
+    return;
+
+  }
+
+
+  showAuthMessage(
+    "Login successful!",
+    false
+  );
+
+
+  updateLoggedInUI(
+    data.user
+  );
+
+}
+
+
+/* =========================================================
+   LOGGED-IN USER UI
+   ========================================================= */
+
+function updateLoggedInUI(user){
+
+  if(!user){
+    return;
+  }
+
+
+  document
+    .getElementById("loginButton")
+    .innerText =
+      "👤 Account";
+
+
+  accountEmail.innerText =
+    user.email;
+
+
+  accountBox.style.display =
+    "block";
+
+}
+
+
+/* =========================================================
+   LOGOUT
+   ========================================================= */
+
+async function logoutUser(){
+
+  const {
+    error
+  } =
+    await supabaseClient.auth
+      .signOut();
+
+
+  if(error){
+
+    showAuthMessage(
+      error.message
+    );
+
+    return;
+
+  }
+
+
+  document
+    .getElementById("loginButton")
+    .innerText =
+      "👤 Login";
+
+
+  accountBox.style.display =
+    "none";
+
+
+  authMode =
+    "login";
+
+
+  updateAuthUI();
+
+
+  showAuthMessage(
+    "Logged out successfully.",
+    false
+  );
+
+}
+
+
+/* =========================================================
+   CHECK EXISTING LOGIN SESSION
+   ========================================================= */
+
+async function checkUser(){
+
+  const {
+    data:{
+      session
+    }
+  } =
+    await supabaseClient.auth
+      .getSession();
+
+
+  if(session){
+
+    updateLoggedInUI(
+      session.user
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   AUTH STATE LISTENER
+   ========================================================= */
+
+supabaseClient.auth
+  .onAuthStateChange(
+    function(
+      event,
+      session
+    ){
+
+      if(session){
+
+        updateLoggedInUI(
+          session.user
+        );
+
+      }
+
+    }
+  );
+
+
+/* =========================================================
+   START
+   ========================================================= */
+
+checkUser();
 
 </script>
 
