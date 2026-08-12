@@ -2,374 +2,482 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>ZOVRA — Modern Online Marketplace</title>
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 
 body{
-  font-family:Inter,Arial,sans-serif;
-  background:#0b0d10;
-  color:#f5f7fa;
+font-family:Inter,Arial,sans-serif;
+background:#0b0d10;
+color:#f5f7fa
 }
 
+button,input,select,textarea{font:inherit}
+
+button{cursor:pointer}
+
 header{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:#101318;
-  border-bottom:1px solid #242932;
-  padding:14px 5%;
+position:sticky;
+top:0;
+z-index:100;
+background:#101318;
+border-bottom:1px solid #242932;
+padding:14px 5%
 }
 
 .nav{
-  max-width:1400px;
-  margin:auto;
-  display:flex;
-  align-items:center;
-  gap:22px;
+max-width:1400px;
+margin:auto;
+display:flex;
+align-items:center;
+gap:14px
 }
 
 .logo{
-  font-size:28px;
-  font-weight:900;
-  letter-spacing:2px;
-  color:#fff;
+font-size:28px;
+font-weight:900;
+letter-spacing:2px;
+color:#fff
 }
 
 .logo span{color:#35d6ff}
 
-.search{
-  flex:1;
-  position:relative;
-}
+.search{flex:1}
 
 .search input{
-  width:100%;
-  padding:14px 20px;
-  border-radius:30px;
-  border:1px solid #303640;
-  background:#191d23;
-  color:white;
-  outline:none;
-  font-size:15px;
-}
-
-.search input:focus{
-  border-color:#35d6ff;
+width:100%;
+padding:13px 18px;
+border-radius:30px;
+border:1px solid #303640;
+background:#191d23;
+color:#fff;
+outline:none
 }
 
 .nav-btn{
-  background:#191d23;
-  border:1px solid #303640;
-  color:white;
-  padding:11px 15px;
-  border-radius:10px;
-  cursor:pointer;
+background:#191d23;
+border:1px solid #303640;
+color:#fff;
+padding:11px 14px;
+border-radius:10px
 }
 
 .hero{
-  min-height:420px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:60px 20px;
-  background:
-    radial-gradient(circle at 50% 30%,#123b48 0%,transparent 35%),
-    linear-gradient(135deg,#0b0d10,#111923);
+min-height:420px;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:60px 20px;
+background:
+radial-gradient(circle at 50% 30%,#123b48 0%,transparent 35%),
+linear-gradient(135deg,#0b0d10,#111923)
 }
 
 .hero h1{
-  font-size:clamp(42px,7vw,82px);
-  line-height:1;
-  margin-bottom:20px;
+font-size:clamp(42px,7vw,82px);
+line-height:1;
+margin-bottom:20px
 }
 
 .hero h1 span{color:#35d6ff}
 
 .hero p{
-  color:#aeb6c2;
-  font-size:18px;
-  max-width:650px;
-  margin:auto;
+color:#aeb6c2;
+font-size:18px;
+max-width:650px;
+margin:auto
 }
 
 .hero button{
-  margin-top:30px;
-  padding:14px 28px;
-  border:0;
-  border-radius:30px;
-  background:#35d6ff;
-  color:#071014;
-  font-weight:800;
-  cursor:pointer;
+margin-top:30px;
+padding:14px 28px;
+border:0;
+border-radius:30px;
+background:#35d6ff;
+color:#071014;
+font-weight:800
 }
 
 .container{
-  max-width:1400px;
-  margin:45px auto;
-  padding:0 5%;
+max-width:1400px;
+margin:45px auto;
+padding:0 5%
 }
 
 .section-title{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:25px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:25px
 }
 
-.section-title h2{font-size:28px}
-
 .categories{
-  display:flex;
-  gap:10px;
-  overflow:auto;
-  margin-bottom:30px;
+display:flex;
+gap:10px;
+overflow:auto;
+margin-bottom:30px
 }
 
 .category{
-  white-space:nowrap;
-  padding:10px 18px;
-  border-radius:25px;
-  border:1px solid #303640;
-  background:#14181e;
-  color:#dce2e9;
-  cursor:pointer;
+white-space:nowrap;
+padding:10px 18px;
+border-radius:25px;
+border:1px solid #303640;
+background:#14181e;
+color:#dce2e9
 }
 
-.category.active,
-.category:hover{
-  background:#35d6ff;
-  color:#071014;
+.category.active,.category:hover{
+background:#35d6ff;
+color:#071014
 }
 
 .products{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
-  gap:20px;
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+gap:20px
 }
 
 .product{
-  background:#14181e;
-  border:1px solid #252b34;
-  border-radius:18px;
-  overflow:hidden;
-  transition:.25s;
+background:#14181e;
+border:1px solid #252b34;
+border-radius:18px;
+overflow:hidden;
+transition:.25s
 }
 
 .product:hover{
-  transform:translateY(-5px);
-  border-color:#35d6ff;
+transform:translateY(-5px);
+border-color:#35d6ff
 }
 
 .product-img{
-  height:240px;
-  width:100%;
-  object-fit:cover;
-  background:#1b2027;
+height:240px;
+width:100%;
+object-fit:cover;
+background:#1b2027
 }
 
-.product-info{
-  padding:17px;
-}
+.product-info{padding:17px}
 
-.product-info h3{
-  margin-bottom:8px;
-  font-size:17px;
-}
+.product-info h3{margin-bottom:8px}
 
 .product-info p{
-  color:#8f99a7;
-  font-size:13px;
-  margin-bottom:12px;
+color:#8f99a7;
+font-size:13px;
+margin-bottom:12px
 }
 
 .price{
-  font-size:21px;
-  font-weight:800;
+font-size:21px;
+font-weight:800
 }
 
 .old-price{
-  color:#717986;
-  text-decoration:line-through;
-  font-size:13px;
-  margin-left:7px;
+color:#717986;
+text-decoration:line-through;
+font-size:13px;
+margin-left:7px
 }
 
 .actions{
-  display:flex;
-  gap:8px;
-  margin-top:14px;
+display:flex;
+gap:8px;
+margin-top:14px
 }
 
-.cart-btn,
-.buy-btn{
-  flex:1;
-  padding:11px;
-  border-radius:9px;
-  cursor:pointer;
-  font-weight:700;
+.cart-btn,.buy-btn{
+flex:1;
+padding:11px;
+border-radius:9px;
+font-weight:700
 }
 
 .cart-btn{
-  background:#20252d;
-  border:1px solid #353c47;
-  color:white;
+background:#20252d;
+border:1px solid #353c47;
+color:#fff
 }
 
 .buy-btn{
-  background:#35d6ff;
-  border:0;
-  color:#071014;
+background:#35d6ff;
+border:0;
+color:#071014
 }
 
 footer{
-  margin-top:70px;
-  padding:40px 5%;
-  text-align:center;
-  border-top:1px solid #242932;
-  color:#7f8997;
+margin-top:70px;
+padding:40px 5%;
+text-align:center;
+border-top:1px solid #242932;
+color:#7f8997
 }
 
-/* AUTH MODAL */
+/* MODAL */
 
-.auth-overlay{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.80);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  z-index:1000;
-  padding:20px;
+.overlay{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.82);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:1000;
+padding:20px
 }
 
-.auth-box{
-  width:100%;
-  max-width:420px;
-  background:#14181e;
-  border:1px solid #303640;
-  border-radius:18px;
-  padding:28px;
-  box-shadow:0 20px 60px rgba(0,0,0,.5);
+.modal{
+width:100%;
+max-width:480px;
+max-height:90vh;
+overflow:auto;
+background:#14181e;
+border:1px solid #303640;
+border-radius:18px;
+padding:25px
 }
 
-.auth-box h2{
-  font-size:28px;
-  margin-bottom:8px;
+.modal h2{margin-bottom:8px}
+
+.sub{
+color:#8f99a7;
+margin-bottom:20px
 }
 
-.auth-subtitle{
-  color:#8f99a7;
-  margin-bottom:22px;
+.close{
+float:right;
+background:none;
+border:0;
+color:#aaa;
+font-size:24px
 }
 
-.auth-box input{
-  width:100%;
-  padding:13px 14px;
-  margin-bottom:12px;
-  border-radius:9px;
-  border:1px solid #353c47;
-  background:#0f1216;
-  color:#fff;
-  outline:none;
+.field{
+width:100%;
+padding:13px;
+margin-bottom:12px;
+border-radius:9px;
+border:1px solid #353c47;
+background:#0f1216;
+color:#fff;
+outline:none
 }
 
-.auth-box input:focus{
-  border-color:#35d6ff;
+.primary{
+width:100%;
+padding:13px;
+border:0;
+border-radius:9px;
+background:#35d6ff;
+color:#071014;
+font-weight:800
 }
 
-.auth-main-btn{
-  width:100%;
-  padding:13px;
-  border:0;
-  border-radius:9px;
-  background:#35d6ff;
-  color:#071014;
-  font-weight:800;
-  cursor:pointer;
-  margin-top:4px;
+.secondary{
+width:100%;
+padding:12px;
+border:1px solid #353c47;
+border-radius:9px;
+background:#20252d;
+color:#fff;
+margin-top:10px
 }
 
-.auth-switch{
-  margin-top:18px;
-  text-align:center;
-  color:#8f99a7;
-  font-size:14px;
+.link{
+background:none;
+border:0;
+color:#35d6ff;
+margin-top:15px
 }
 
-.auth-switch button{
-  background:none;
-  border:0;
-  color:#35d6ff;
-  cursor:pointer;
-  font-weight:700;
+.message{
+min-height:20px;
+margin:10px 0;
+font-size:14px
 }
 
-.auth-close{
-  float:right;
-  background:none;
-  border:0;
-  color:#aaa;
-  font-size:22px;
-  cursor:pointer;
+/* ACCOUNT */
+
+.account-info{
+background:#0f1216;
+border-radius:10px;
+padding:15px;
+margin-bottom:15px;
+word-break:break-word
 }
 
-.auth-message{
-  min-height:20px;
-  margin:10px 0;
-  font-size:14px;
+/* CART */
+
+.cart-item{
+display:flex;
+gap:12px;
+padding:12px 0;
+border-bottom:1px solid #292f38
 }
 
-.account-box{
-  display:none;
-  margin-top:15px;
-  padding:14px;
-  border-radius:10px;
-  background:#0f1216;
+.cart-item img{
+width:65px;
+height:65px;
+object-fit:cover;
+border-radius:8px
 }
 
-.account-box p{
-  color:#c8d0da;
-  margin-bottom:10px;
-  word-break:break-word;
+.cart-item-info{flex:1}
+
+.qty{
+display:flex;
+gap:8px;
+align-items:center;
+margin-top:7px
 }
 
-.logout-btn{
-  width:100%;
-  padding:10px;
-  border:1px solid #353c47;
-  background:#20252d;
-  color:white;
-  border-radius:8px;
-  cursor:pointer;
+.qty button{
+width:27px;
+height:27px;
+border:1px solid #353c47;
+background:#20252d;
+color:#fff;
+border-radius:5px
+}
+
+/* ADMIN */
+
+.admin{
+display:none;
+position:fixed;
+inset:0;
+z-index:2000;
+background:#0b0d10;
+overflow:auto
+}
+
+.admin-header{
+position:sticky;
+top:0;
+z-index:5;
+background:#101318;
+border-bottom:1px solid #242932;
+padding:15px 5%;
+display:flex;
+justify-content:space-between;
+align-items:center
+}
+
+.admin-header h2 span{color:#35d6ff}
+
+.admin-main{
+max-width:1400px;
+margin:auto;
+padding:30px 5%
+}
+
+.admin-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
+margin-bottom:30px
+}
+
+.stat{
+background:#14181e;
+border:1px solid #252b34;
+border-radius:14px;
+padding:20px
+}
+
+.stat small{color:#8f99a7}
+
+.stat strong{
+display:block;
+font-size:28px;
+margin-top:8px
+}
+
+.admin-card{
+background:#14181e;
+border:1px solid #252b34;
+border-radius:14px;
+padding:20px;
+margin-bottom:20px
+}
+
+.admin-card h3{margin-bottom:15px}
+
+.admin-form{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:10px
+}
+
+.admin-form textarea{
+min-height:90px;
+resize:vertical
+}
+
+.admin-product,.admin-order{
+border-top:1px solid #292f38;
+padding:15px 0
+}
+
+.admin-actions{
+display:flex;
+gap:8px;
+margin-top:10px
+}
+
+.small-btn{
+padding:8px 11px;
+border-radius:7px;
+border:1px solid #353c47;
+background:#20252d;
+color:#fff
+}
+
+.danger{border-color:#7a3030}
+
+.order-status{
+padding:8px;
+background:#0f1216;
+color:#fff;
+border:1px solid #353c47;
+border-radius:7px
+}
+
+.empty{
+color:#8f99a7;
+padding:20px 0
 }
 
 @media(max-width:700px){
 
-  .nav{
-    flex-wrap:wrap;
-  }
+.nav{
+flex-wrap:wrap
+}
 
-  .logo{
-    font-size:24px;
-  }
+.logo{font-size:24px}
 
-  .search{
-    order:3;
-    flex-basis:100%;
-  }
+.search{
+order:3;
+flex-basis:100%
+}
 
-  .products{
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
-  }
+.products{
+grid-template-columns:repeat(2,1fr);
+gap:12px
+}
 
-  .product-img{
-    height:180px;
-  }
+.product-img{height:180px}
+
+.admin-grid{
+grid-template-columns:1fr
+}
+
+.admin-form{
+grid-template-columns:1fr
+}
 }
 </style>
 </head>
@@ -377,1147 +485,1926 @@ footer{
 <body>
 
 <header>
+<div class="nav">
 
-  <div class="nav">
+<div class="logo">ZOV<span>RA</span></div>
 
-    <div class="logo">
-      ZOV<span>RA</span>
-    </div>
+<div class="search">
+<input id="searchInput" type="search"
+placeholder="Search products, categories and more...">
+</div>
 
-    <div class="search">
+<button class="nav-btn">♡</button>
 
-      <input
-        id="searchInput"
-        type="search"
-        placeholder="Search products, categories and more..."
-      >
+<button class="nav-btn" id="cartButton">
+🛒 0
+</button>
 
-    </div>
+<button class="nav-btn" id="accountButton">
+👤 Login
+</button>
 
-    <button class="nav-btn">
-      ♡
-    </button>
-
-    <button class="nav-btn" id="cartButton">
-      🛒 0
-    </button>
-
-    <button class="nav-btn" id="loginButton">
-      👤 Login
-    </button>
-
-  </div>
-
+</div>
 </header>
 
 
 <section class="hero">
+<div>
 
-  <div>
+<h1>Shop <span>Different.</span></h1>
 
-    <h1>
-      Shop <span>Different.</span>
-    </h1>
+<p>
+Discover trending products, smart deals and everyday essentials
+— all in one modern shopping destination.
+</p>
 
-    <p>
-      Discover trending products, smart deals and everyday essentials
-      — all in one modern shopping destination.
-    </p>
+<button onclick="scrollToProducts()">
+Explore Products →
+</button>
 
-    <button onclick="scrollToProducts()">
-      Explore Products →
-    </button>
-
-  </div>
-
+</div>
 </section>
 
 
 <main class="container">
 
-  <div class="section-title">
-    <h2>Explore Categories</h2>
-  </div>
+<div class="section-title">
+<h2>Explore Categories</h2>
+</div>
 
+<div class="categories">
 
-  <div class="categories">
+<button class="category active" data-category="all">All</button>
+<button class="category" data-category="electronics">Electronics</button>
+<button class="category" data-category="home">Home</button>
+<button class="category" data-category="fashion">Fashion</button>
+<button class="category" data-category="beauty">Beauty</button>
+<button class="category" data-category="fitness">Fitness</button>
 
-    <button class="category active" data-category="all">
-      All
-    </button>
+</div>
 
-    <button class="category" data-category="electronics">
-      Electronics
-    </button>
+<div class="section-title" id="productsSection">
+<h2>🔥 Trending Now</h2>
+</div>
 
-    <button class="category" data-category="home">
-      Home
-    </button>
-
-    <button class="category" data-category="fashion">
-      Fashion
-    </button>
-
-    <button class="category" data-category="beauty">
-      Beauty
-    </button>
-
-    <button class="category" data-category="fitness">
-      Fitness
-    </button>
-
-  </div>
-
-
-  <div class="section-title" id="productsSection">
-
-    <h2>
-      🔥 Trending Now
-    </h2>
-
-  </div>
-
-
-  <div class="products" id="products">
-
-
-    <!-- PRODUCT 1 -->
-
-    <article class="product" data-category="electronics">
-
-      <img
-        class="product-img"
-        src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=80"
-        alt="Smart Watch"
-      >
-
-      <div class="product-info">
-
-        <h3>
-          Smart Watch
-        </h3>
-
-        <p>
-          Stylish everyday smartwatch.
-        </p>
-
-        <div>
-
-          <span class="price">
-            ₹899
-          </span>
-
-          <span class="old-price">
-            ₹1,499
-          </span>
-
-        </div>
-
-        <div class="actions">
-
-          <button
-            class="cart-btn"
-            onclick="addToCart()"
-          >
-            Add to Cart
-          </button>
-
-          <button
-            class="buy-btn"
-            onclick="buyNow('Smart Watch',899)"
-          >
-            Buy Now
-          </button>
-
-        </div>
-
-      </div>
-
-    </article>
-
-
-    <!-- PRODUCT 2 -->
-
-    <article class="product" data-category="home">
-
-      <img
-        class="product-img"
-        src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=700&q=80"
-        alt="Home Product"
-      >
-
-      <div class="product-info">
-
-        <h3>
-          Modern Home Essential
-        </h3>
-
-        <p>
-          Upgrade your everyday home setup.
-        </p>
-
-        <div>
-
-          <span class="price">
-            ₹699
-          </span>
-
-          <span class="old-price">
-            ₹999
-          </span>
-
-        </div>
-
-        <div class="actions">
-
-          <button
-            class="cart-btn"
-            onclick="addToCart()"
-          >
-            Add to Cart
-          </button>
-
-          <button
-            class="buy-btn"
-            onclick="buyNow('Modern Home Essential',699)"
-          >
-            Buy Now
-          </button>
-
-        </div>
-
-      </div>
-
-    </article>
-
-
-    <!-- PRODUCT 3 -->
-
-    <article class="product" data-category="fashion">
-
-      <img
-        class="product-img"
-        src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=700&q=80"
-        alt="Fashion Product"
-      >
-
-      <div class="product-info">
-
-        <h3>
-          Trending Fashion
-        </h3>
-
-        <p>
-          Modern style for everyday wear.
-        </p>
-
-        <div>
-
-          <span class="price">
-            ₹799
-          </span>
-
-          <span class="old-price">
-            ₹1,299
-          </span>
-
-        </div>
-
-        <div class="actions">
-
-          <button
-            class="cart-btn"
-            onclick="addToCart()"
-          >
-            Add to Cart
-          </button>
-
-          <button
-            class="buy-btn"
-            onclick="buyNow('Trending Fashion',799)"
-          >
-            Buy Now
-          </button>
-
-        </div>
-
-      </div>
-
-    </article>
-
-
-    <!-- PRODUCT 4 -->
-
-    <article class="product" data-category="fitness">
-
-      <img
-        class="product-img"
-        src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=700&q=80"
-        alt="Fitness Product"
-      >
-
-      <div class="product-info">
-
-        <h3>
-          Fitness Essential
-        </h3>
-
-        <p>
-          Useful equipment for your fitness routine.
-        </p>
-
-        <div>
-
-          <span class="price">
-            ₹599
-          </span>
-
-          <span class="old-price">
-            ₹899
-          </span>
-
-        </div>
-
-        <div class="actions">
-
-          <button
-            class="cart-btn"
-            onclick="addToCart()"
-          >
-            Add to Cart
-          </button>
-
-          <button
-            class="buy-btn"
-            onclick="buyNow('Fitness Essential',599)"
-          >
-            Buy Now
-          </button>
-
-        </div>
-
-      </div>
-
-    </article>
-
-  </div>
+<div class="products" id="products"></div>
 
 </main>
 
 
 <footer>
 
-  <strong>
-    ZOVRA
-  </strong>
+<strong>ZOVRA</strong>
 
-  <p style="margin-top:10px;">
-    Shop Different. Live Better.
-  </p>
+<p style="margin-top:10px">
+Shop Different. Live Better.
+</p>
 
-  <p style="margin-top:15px;">
-    © 2026 ZOVRA. All Rights Reserved.
-  </p>
+<p style="margin-top:15px">
+© 2026 ZOVRA. All Rights Reserved.
+</p>
 
 </footer>
 
 
-<!-- LOGIN / REGISTER MODAL -->
+<!-- AUTH MODAL -->
 
-<div
-  class="auth-overlay"
-  id="authOverlay"
+<div class="overlay" id="authOverlay">
+
+<div class="modal">
+
+<button class="close" onclick="closeModal('authOverlay')">×</button>
+
+<h2 id="authTitle">Login to ZOVRA</h2>
+
+<p class="sub" id="authSub">
+Welcome back. Login to continue.
+</p>
+
+<div id="nameField" style="display:none">
+
+<input
+class="field"
+id="authName"
+placeholder="Full Name"
+>
+</div>
+
+<input
+class="field"
+id="authEmail"
+type="email"
+placeholder="Email address"
 >
 
-  <div class="auth-box">
+<input
+class="field"
+id="authPassword"
+type="password"
+placeholder="Password"
+>
 
-    <button
-      class="auth-close"
-      onclick="closeAuth()"
-    >
-      ×
-    </button>
+<div class="message" id="authMessage"></div>
 
+<button class="primary" id="authSubmit"
+onclick="submitAuth()">
+Login
+</button>
 
-    <h2 id="authTitle">
-      Login to ZOVRA
-    </h2>
+<button class="link"
+id="authSwitch"
+onclick="switchAuth()">
+Don't have an account? Register
+</button>
 
-    <p
-      class="auth-subtitle"
-      id="authSubtitle"
-    >
-      Welcome back. Login to continue.
-    </p>
-
-
-    <div
-      id="registerNameBox"
-      style="display:none;"
-    >
-
-      <input
-        id="registerName"
-        type="text"
-        placeholder="Full Name"
-        autocomplete="name"
-      >
-
-    </div>
+</div>
+</div>
 
 
-    <input
-      id="authEmail"
-      type="email"
-      placeholder="Email address"
-      autocomplete="email"
-    >
+<!-- ACCOUNT MODAL -->
+
+<div class="overlay" id="accountOverlay">
+
+<div class="modal">
+
+<button class="close"
+onclick="closeModal('accountOverlay')">
+×
+</button>
+
+<h2>My Account</h2>
+
+<p class="sub">Your ZOVRA customer account</p>
+
+<div class="account-info">
+<strong id="accountName"></strong>
+<br>
+<span id="accountEmail"></span>
+</div>
+
+<button class="primary" onclick="openOrders()">
+📦 My Orders
+</button>
+
+<button class="secondary" onclick="logout()">
+Logout
+</button>
+
+</div>
+</div>
 
 
-    <input
-      id="authPassword"
-      type="password"
-      placeholder="Password"
-      autocomplete="current-password"
-    >
+<!-- CART MODAL -->
+
+<div class="overlay" id="cartOverlay">
+
+<div class="modal">
+
+<button class="close"
+onclick="closeModal('cartOverlay')">
+×
+</button>
+
+<h2>🛒 My Cart</h2>
+
+<p class="sub">
+Review your products before checkout.
+</p>
+
+<div id="cartItems"></div>
+
+<div id="cartTotal"
+style="margin-top:15px;font-size:20px;font-weight:800">
+Total: ₹0
+</div>
+
+<button
+class="primary"
+style="margin-top:15px"
+onclick="openCheckout()">
+Checkout
+</button>
+
+</div>
+</div>
 
 
-    <div
-      class="auth-message"
-      id="authMessage"
-    ></div>
+<!-- CHECKOUT -->
+
+<div class="overlay" id="checkoutOverlay">
+
+<div class="modal">
+
+<button class="close"
+onclick="closeModal('checkoutOverlay')">
+×
+</button>
+
+<h2>COD Checkout</h2>
+
+<p class="sub">
+Enter your delivery details.
+</p>
+
+<input class="field" id="checkoutName"
+placeholder="Full Name">
+
+<input class="field" id="checkoutPhone"
+placeholder="Phone Number">
+
+<textarea
+class="field"
+id="checkoutAddress"
+placeholder="Full Delivery Address">
+</textarea>
+
+<input class="field"
+id="checkoutCity"
+placeholder="City">
+
+<input class="field"
+id="checkoutPincode"
+placeholder="PIN Code">
+
+<div class="message" id="checkoutMessage"></div>
+
+<button class="primary"
+onclick="placeOrder()">
+Place COD Order
+</button>
+
+</div>
+</div>
 
 
-    <button
-      class="auth-main-btn"
-      id="authSubmit"
-      onclick="handleAuth()"
-    >
-      Login
-    </button>
+<!-- ORDERS -->
+
+<div class="overlay" id="ordersOverlay">
+
+<div class="modal">
+
+<button class="close"
+onclick="closeModal('ordersOverlay')">
+×
+</button>
+
+<h2>📦 My Orders</h2>
+
+<p class="sub">Your previous ZOVRA orders.</p>
+
+<div id="customerOrders"></div>
+
+</div>
+</div>
 
 
-    <div class="auth-switch">
+<!-- ADMIN DASHBOARD -->
 
-      <span id="switchText">
-        Don't have an account?
-      </span>
+<div class="admin" id="adminDashboard">
 
-      <button
-        onclick="toggleAuthMode()"
-        id="switchButton"
-      >
-        Register
-      </button>
+<div class="admin-header">
 
-    </div>
+<h2>
+ZOV<span>RA</span> Owner Dashboard
+</h2>
 
-
-    <div
-      class="account-box"
-      id="accountBox"
-    >
-
-      <p>
-        Logged in as:
-        <strong id="accountEmail"></strong>
-      </p>
-
-      <button
-        class="logout-btn"
-        onclick="logoutUser()"
-      >
-        Logout
-      </button>
-
-    </div>
-
-  </div>
+<button class="small-btn"
+onclick="closeAdmin()">
+Close
+</button>
 
 </div>
 
 
-<!-- SUPABASE JAVASCRIPT LIBRARY -->
+<div class="admin-main">
+
+<div class="admin-grid">
+
+<div class="stat">
+<small>Products</small>
+<strong id="statProducts">0</strong>
+</div>
+
+<div class="stat">
+<small>Orders</small>
+<strong id="statOrders">0</strong>
+</div>
+
+<div class="stat">
+<small>Sales</small>
+<strong id="statSales">₹0</strong>
+</div>
+
+</div>
+
+
+<div class="admin-card">
+
+<h3>Add / Edit Product</h3>
+
+<div class="admin-form">
+
+<input
+class="field"
+id="productName"
+placeholder="Product name">
+
+<input
+class="field"
+id="productPrice"
+type="number"
+placeholder="Price">
+
+<input
+class="field"
+id="productOldPrice"
+type="number"
+placeholder="Old price">
+
+<input
+class="field"
+id="productCategory"
+placeholder="Category">
+
+<input
+class="field"
+id="productImage"
+placeholder="Image URL">
+
+<textarea
+class="field"
+id="productDescription"
+placeholder="Description">
+</textarea>
+
+</div>
+
+<input type="hidden" id="editProductId">
+
+<button class="primary"
+onclick="saveProduct()">
+Save Product
+</button>
+
+<button class="secondary"
+onclick="clearProductForm()">
+Clear
+</button>
+
+<div class="message"
+id="productMessage">
+</div>
+
+</div>
+
+
+<div class="admin-card">
+
+<h3>Products</h3>
+
+<div id="adminProducts"></div>
+
+</div>
+
+
+<div class="admin-card">
+
+<h3>Orders</h3>
+
+<div id="adminOrders"></div>
+
+</div>
+
+</div>
+
+</div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-
 <script>
 
-/* =========================================================
-   SUPABASE CONFIGURATION
-   ========================================================= */
+/* ==========================================================
+SUPABASE
+========================================================== */
 
 const SUPABASE_URL =
-  "https://lfcygcjrqfxhaalhqqaz.supabase.co";
+"https://lfcygcjrqfxhaalhqqaz.supabase.co";
 
 const SUPABASE_PUBLISHABLE_KEY =
-  "sb_publishable_Cvp6MCG6KGI6gLDRGcWKtw__WBNCYCz";
-
+"sb_publishable_Cvp6MCG6KGI6gLDRGcWKtw__WBNCYCz";
 
 const supabaseClient =
-  window.supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_PUBLISHABLE_KEY
-  );
+window.supabase.createClient(
+SUPABASE_URL,
+SUPABASE_PUBLISHABLE_KEY
+);
 
 
-/* =========================================================
-   CART
-   ========================================================= */
+/* ==========================================================
+OWNER
+==========================================================
 
-let cartCount = 0;
+IMPORTANT:
+Replace this email with the EXACT email you want to use
+as the ZOVRA owner/admin account.
 
+This frontend check is NOT the security boundary.
+Supabase RLS must also restrict admin operations.
+========================================================== */
 
-function addToCart(){
-
-  cartCount++;
-
-  document
-    .getElementById("cartButton")
-    .innerText =
-      "🛒 " + cartCount;
-
-}
+const OWNER_EMAIL =
+"YOUR_OWNER_EMAIL@gmail.com";
 
 
-/* =========================================================
-   BUY NOW
-   ========================================================= */
+/* ==========================================================
+STATE
+========================================================== */
 
-function buyNow(product,price){
-
-  alert(
-    "Selected Product: " +
-    product +
-    "\nPrice: ₹" +
-    price +
-    "\n\nCheckout system will be connected next."
-  );
-
-}
-
-
-/* =========================================================
-   SCROLL TO PRODUCTS
-   ========================================================= */
-
-function scrollToProducts(){
-
-  document
-    .getElementById("productsSection")
-    .scrollIntoView({
-      behavior:"smooth"
-    });
-
-}
-
-
-/* =========================================================
-   SEARCH
-   ========================================================= */
-
-document
-  .getElementById("searchInput")
-  .addEventListener(
-    "input",
-    function(){
-
-      const query =
-        this.value
-          .toLowerCase()
-          .trim();
-
-
-      document
-        .querySelectorAll(".product")
-        .forEach(
-          function(product){
-
-            const text =
-              product
-                .innerText
-                .toLowerCase();
-
-
-            product.style.display =
-              text.includes(query)
-              ? ""
-              : "none";
-
-          }
-        );
-
-    }
-  );
-
-
-/* =========================================================
-   CATEGORIES
-   ========================================================= */
-
-document
-  .querySelectorAll(".category")
-  .forEach(
-    function(button){
-
-      button.addEventListener(
-        "click",
-        function(){
-
-          document
-            .querySelectorAll(".category")
-            .forEach(
-              function(btn){
-
-                btn.classList
-                  .remove("active");
-
-              }
-            );
-
-
-          this.classList
-            .add("active");
-
-
-          const category =
-            this.dataset.category;
-
-
-          document
-            .querySelectorAll(".product")
-            .forEach(
-              function(product){
-
-                if(
-                  category === "all" ||
-                  product.dataset.category === category
-                ){
-
-                  product.style.display = "";
-
-                }else{
-
-                  product.style.display = "none";
-
-                }
-
-              }
-            );
-
-        }
-      );
-
-    }
-  );
-
-
-/* =========================================================
-   AUTH UI
-   ========================================================= */
-
+let currentUser = null;
+let products = [];
+let cart = [];
 let authMode = "login";
 
 
-const authOverlay =
-  document.getElementById(
-    "authOverlay"
-  );
+/* ==========================================================
+HELPERS
+========================================================== */
+
+function money(value){
+return "₹" + Number(value || 0).toLocaleString("en-IN");
+}
+
+function escapeHTML(value){
+return String(value ?? "")
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;");
+}
+
+function show(id){
+document.getElementById(id).style.display="flex";
+}
+
+function closeModal(id){
+document.getElementById(id).style.display="none";
+}
 
 
-const authTitle =
-  document.getElementById(
-    "authTitle"
-  );
+/* ==========================================================
+AUTH
+========================================================== */
+
+function openLogin(){
+
+authMode="login";
+
+document.getElementById("authTitle").innerText =
+"Login to ZOVRA";
+
+document.getElementById("authSub").innerText =
+"Welcome back. Login to continue.";
+
+document.getElementById("authSubmit").innerText =
+"Login";
+
+document.getElementById("authSwitch").innerText =
+"Don't have an account? Register";
+
+document.getElementById("nameField").style.display="none";
+
+document.getElementById("authMessage").innerText="";
+
+show("authOverlay");
+}
 
 
-const authSubtitle =
-  document.getElementById(
-    "authSubtitle"
-  );
+function switchAuth(){
+
+authMode =
+authMode==="login"
+?"register"
+:"login";
+
+document.getElementById("authMessage").innerText="";
+
+if(authMode==="register"){
+
+document.getElementById("authTitle").innerText =
+"Create ZOVRA Account";
+
+document.getElementById("authSub").innerText =
+"Create your customer account.";
+
+document.getElementById("authSubmit").innerText =
+"Create Account";
+
+document.getElementById("authSwitch").innerText =
+"Already have an account? Login";
+
+document.getElementById("nameField").style.display =
+"block";
+
+}else{
+
+openLogin();
+
+}
+
+}
 
 
-const authSubmit =
-  document.getElementById(
-    "authSubmit"
-  );
+async function submitAuth(){
+
+const email =
+document.getElementById("authEmail").value.trim();
+
+const password =
+document.getElementById("authPassword").value;
+
+const message =
+document.getElementById("authMessage");
+
+if(!email || !password){
+
+message.innerText =
+"Please enter email and password.";
+
+message.style.color="#ff6b6b";
+
+return;
+}
 
 
-const registerNameBox =
-  document.getElementById(
-    "registerNameBox"
-  );
+if(authMode==="register"){
+
+const name =
+document.getElementById("authName").value.trim();
+
+if(!name){
+
+message.innerText =
+"Please enter your name.";
+
+message.style.color="#ff6b6b";
+
+return;
+}
 
 
-const switchText =
-  document.getElementById(
-    "switchText"
-  );
+if(password.length<6){
+
+message.innerText =
+"Password must be at least 6 characters.";
+
+message.style.color="#ff6b6b";
+
+return;
+}
 
 
-const switchButton =
-  document.getElementById(
-    "switchButton"
-  );
+const {data,error} =
+await supabaseClient.auth.signUp({
+
+email,
+password,
+
+options:{
+data:{
+full_name:name
+}
+}
+
+});
 
 
-const authMessage =
-  document.getElementById(
-    "authMessage"
-  );
+if(error){
+
+message.innerText=error.message;
+message.style.color="#ff6b6b";
+
+return;
+}
 
 
-const accountBox =
-  document.getElementById(
-    "accountBox"
-  );
+if(data.session){
+
+currentUser=data.user;
+
+closeModal("authOverlay");
+
+updateAccountButton();
+
+alert("Account created successfully!");
+
+}else{
+
+message.innerText =
+"Account created. Check your email if confirmation is required.";
+
+message.style.color="#35d6ff";
+
+}
+
+return;
+}
 
 
-const accountEmail =
-  document.getElementById(
-    "accountEmail"
-  );
+/* LOGIN */
+
+const {data,error} =
+await supabaseClient.auth.signInWithPassword({
+
+email,
+password
+
+});
 
 
-/* =========================================================
-   OPEN LOGIN
-   ========================================================= */
+if(error){
+
+message.innerText=error.message;
+message.style.color="#ff6b6b";
+
+return;
+}
+
+
+currentUser=data.user;
+
+closeModal("authOverlay");
+
+updateAccountButton();
+
+alert("Login successful!");
+
+}
+
+
+/* ==========================================================
+SESSION
+========================================================== */
+
+async function loadSession(){
+
+const {data} =
+await supabaseClient.auth.getSession();
+
+currentUser =
+data.session
+? data.session.user
+:null;
+
+updateAccountButton();
+
+}
+
+
+supabaseClient.auth.onAuthStateChange(
+(event,session)=>{
+
+currentUser =
+session
+? session.user
+:null;
+
+updateAccountButton();
+
+}
+);
+
+
+/* ==========================================================
+ACCOUNT
+========================================================== */
+
+function updateAccountButton(){
+
+const btn =
+document.getElementById("accountButton");
+
+if(currentUser){
+
+btn.innerText="👤 Account";
+
+}else{
+
+btn.innerText="👤 Login";
+
+}
+
+}
+
 
 document
-  .getElementById("loginButton")
-  .addEventListener(
-    "click",
-    function(){
+.getElementById("accountButton")
+.addEventListener("click",()=>{
 
-      openAuth();
+if(currentUser){
 
-    }
-  );
+document.getElementById("accountName").innerText =
+currentUser.user_metadata?.full_name ||
+"ZOVRA Customer";
+
+document.getElementById("accountEmail").innerText =
+currentUser.email || "";
+
+show("accountOverlay");
+
+}else{
+
+openLogin();
+
+}
+
+});
 
 
-function openAuth(){
+async function logout(){
 
-  authOverlay.style.display =
-    "flex";
+await supabaseClient.auth.signOut();
+
+currentUser=null;
+
+closeModal("accountOverlay");
+
+updateAccountButton();
+
+alert("Logged out.");
 
 }
 
 
-function closeAuth(){
+/* ==========================================================
+PRODUCTS
+========================================================== */
 
-  authOverlay.style.display =
-    "none";
+async function loadProducts(){
 
-  clearAuthMessage();
+const {data,error} =
+await supabaseClient
+.from("products")
+.select("*")
+.order("created_at",{ascending:false});
+
+if(error){
+
+console.error(error);
+
+return;
+
+}
+
+products=data || [];
+
+renderProducts();
 
 }
 
 
-/* =========================================================
-   LOGIN / REGISTER TOGGLE
-   ========================================================= */
+function renderProducts(){
 
-function toggleAuthMode(){
+const box =
+document.getElementById("products");
 
-  authMode =
-    authMode === "login"
-      ? "register"
-      : "login";
+if(!products.length){
+
+box.innerHTML =
+'<div class="empty">No products available.</div>';
+
+return;
+}
 
 
-  updateAuthUI();
+box.innerHTML =
+products.map(p=>`
+
+<article
+class="product"
+data-category="${escapeHTML(p.category || "all")}">
+
+<img
+class="product-img"
+src="${escapeHTML(p.image_url || "")}"
+alt="${escapeHTML(p.name)}">
+
+<div class="product-info">
+
+<h3>${escapeHTML(p.name)}</h3>
+
+<p>${escapeHTML(p.description || "")}</p>
+
+<div>
+
+<span class="price">
+${money(p.price)}
+</span>
+
+${
+p.old_price
+? `<span class="old-price">${money(p.old_price)}</span>`
+:""
+}
+
+</div>
+
+<div class="actions">
+
+<button
+class="cart-btn"
+onclick="addProductToCart('${p.id}')">
+Add to Cart
+</button>
+
+<button
+class="buy-btn"
+onclick="buyProduct('${p.id}')">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+`).join("");
 
 }
 
 
-function updateAuthUI(){
+/* ==========================================================
+SEARCH
+========================================================== */
 
-  clearAuthMessage();
+document
+.getElementById("searchInput")
+.addEventListener("input",function(){
 
+const query =
+this.value.toLowerCase().trim();
 
-  if(authMode === "register"){
+document
+.querySelectorAll(".product")
+.forEach(product=>{
 
-    authTitle.innerText =
-      "Create ZOVRA Account";
+product.style.display =
+product.innerText
+.toLowerCase()
+.includes(query)
+?""
+:"none";
 
+});
 
-    authSubtitle.innerText =
-      "Register with your email and password.";
-
-
-    authSubmit.innerText =
-      "Create Account";
-
-
-    registerNameBox.style.display =
-      "block";
-
-
-    switchText.innerText =
-      "Already have an account?";
-
-
-    switchButton.innerText =
-      "Login";
+});
 
 
-  }else{
+/* ==========================================================
+CATEGORY
+========================================================== */
 
-    authTitle.innerText =
-      "Login to ZOVRA";
+document
+.querySelectorAll(".category")
+.forEach(button=>{
+
+button.addEventListener("click",()=>{
+
+document
+.querySelectorAll(".category")
+.forEach(x=>x.classList.remove("active"));
+
+button.classList.add("active");
+
+const category =
+button.dataset.category;
+
+document
+.querySelectorAll(".product")
+.forEach(product=>{
+
+product.style.display =
+category==="all" ||
+product.dataset.category===category
+?""
+:"none";
+
+});
+
+});
+
+});
 
 
-    authSubtitle.innerText =
-      "Welcome back. Login to continue.";
+/* ==========================================================
+CART
+========================================================== */
 
+function saveCart(){
 
-    authSubmit.innerText =
-      "Login";
-
-
-    registerNameBox.style.display =
-      "none";
-
-
-    switchText.innerText =
-      "Don't have an account?";
-
-
-    switchButton.innerText =
-      "Register";
-
-  }
+localStorage.setItem(
+"zovra_cart",
+JSON.stringify(cart)
+);
 
 }
 
 
-/* =========================================================
-   AUTH MESSAGE
-   ========================================================= */
+function loadCart(){
 
-function showAuthMessage(
-  message,
-  isError = true
+try{
+
+cart =
+JSON.parse(
+localStorage.getItem("zovra_cart")
+)||[];
+
+}catch{
+
+cart=[];
+
+}
+
+updateCartButton();
+
+}
+
+
+function addProductToCart(id){
+
+const product =
+products.find(p=>p.id===id);
+
+if(!product)return;
+
+
+const existing =
+cart.find(x=>x.id===id);
+
+if(existing){
+
+existing.quantity++;
+
+}else{
+
+cart.push({
+id:product.id,
+name:product.name,
+price:Number(product.price),
+image_url:product.image_url,
+quantity:1
+});
+
+}
+
+saveCart();
+
+updateCartButton();
+
+alert("Added to cart.");
+
+}
+
+
+function updateCartButton(){
+
+const count =
+cart.reduce(
+(sum,item)=>sum+Number(item.quantity),
+0
+);
+
+document
+.getElementById("cartButton")
+.innerText=
+"🛒 "+count;
+
+}
+
+
+document
+.getElementById("cartButton")
+.addEventListener(
+"click",
+openCart
+);
+
+
+function openCart(){
+
+renderCart();
+
+show("cartOverlay");
+
+}
+
+
+function renderCart(){
+
+const box =
+document.getElementById("cartItems");
+
+if(!cart.length){
+
+box.innerHTML =
+'<div class="empty">Your cart is empty.</div>';
+
+document.getElementById("cartTotal").innerText =
+"Total: ₹0";
+
+return;
+}
+
+
+box.innerHTML =
+cart.map(item=>`
+
+<div class="cart-item">
+
+<img src="${escapeHTML(item.image_url || "")}">
+
+<div class="cart-item-info">
+
+<strong>
+${escapeHTML(item.name)}
+</strong>
+
+<div>
+${money(item.price)}
+</div>
+
+<div class="qty">
+
+<button onclick="changeQty('${item.id}',-1)">
+−
+</button>
+
+<span>${item.quantity}</span>
+
+<button onclick="changeQty('${item.id}',1)">
++
+</button>
+
+<button
+class="small-btn"
+onclick="removeCart('${item.id}')">
+Remove
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+`).join("");
+
+
+document.getElementById("cartTotal").innerText =
+"Total: " +
+money(cartTotal());
+
+}
+
+
+function cartTotal(){
+
+return cart.reduce(
+(sum,item)=>
+sum+(Number(item.price)*Number(item.quantity)),
+0
+);
+
+}
+
+
+function changeQty(id,amount){
+
+const item =
+cart.find(x=>x.id===id);
+
+if(!item)return;
+
+item.quantity+=amount;
+
+if(item.quantity<=0){
+
+cart =
+cart.filter(x=>x.id!==id);
+
+}
+
+saveCart();
+
+updateCartButton();
+
+renderCart();
+
+}
+
+
+function removeCart(id){
+
+cart =
+cart.filter(x=>x.id!==id);
+
+saveCart();
+
+updateCartButton();
+
+renderCart();
+
+}
+
+
+/* ==========================================================
+BUY NOW
+========================================================== */
+
+function buyProduct(id){
+
+const product =
+products.find(p=>p.id===id);
+
+if(!product)return;
+
+cart=[{
+
+id:product.id,
+name:product.name,
+price:Number(product.price),
+image_url:product.image_url,
+quantity:1
+
+}];
+
+saveCart();
+
+updateCartButton();
+
+openCheckout();
+
+}
+
+
+/* ==========================================================
+CHECKOUT
+========================================================== */
+
+function openCheckout(){
+
+if(!currentUser){
+
+closeModal("cartOverlay");
+
+openLogin();
+
+alert("Please login before checkout.");
+
+return;
+}
+
+
+if(!cart.length){
+
+alert("Your cart is empty.");
+
+return;
+}
+
+
+document.getElementById("checkoutName").value =
+currentUser.user_metadata?.full_name || "";
+
+show("checkoutOverlay");
+
+}
+
+
+async function placeOrder(){
+
+if(!currentUser){
+
+alert("Please login first.");
+
+return;
+}
+
+
+if(!cart.length){
+
+alert("Your cart is empty.");
+
+return;
+}
+
+
+const name =
+document.getElementById("checkoutName").value.trim();
+
+const phone =
+document.getElementById("checkoutPhone").value.trim();
+
+const address =
+document.getElementById("checkoutAddress").value.trim();
+
+const city =
+document.getElementById("checkoutCity").value.trim();
+
+const pincode =
+document.getElementById("checkoutPincode").value.trim();
+
+const msg =
+document.getElementById("checkoutMessage");
+
+
+if(!name || !phone || !address || !city || !pincode){
+
+msg.innerText =
+"Please fill all delivery details.";
+
+msg.style.color="#ff6b6b";
+
+return;
+}
+
+
+const orderItems =
+cart.map(item=>({
+
+product_id:item.id,
+product_name:item.name,
+price:item.price,
+quantity:item.quantity
+
+}));
+
+
+const {data,error} =
+await supabaseClient
+.from("orders")
+.insert({
+
+user_id:currentUser.id,
+customer_name:name,
+phone,
+address,
+city,
+pincode,
+items:orderItems,
+total_amount:cartTotal(),
+payment_method:"COD",
+status:"Pending"
+
+})
+.select()
+.single();
+
+
+if(error){
+
+console.error(error);
+
+msg.innerText =
+error.message;
+
+msg.style.color="#ff6b6b";
+
+return;
+
+}
+
+
+cart=[];
+
+saveCart();
+
+updateCartButton();
+
+closeModal("checkoutOverlay");
+closeModal("cartOverlay");
+
+alert(
+"Order placed successfully!\nOrder ID: "+
+data.id
+);
+
+}
+
+
+/* ==========================================================
+MY ORDERS
+========================================================== */
+
+async function openOrders(){
+
+closeModal("accountOverlay");
+
+show("ordersOverlay");
+
+const box =
+document.getElementById("customerOrders");
+
+box.innerHTML =
+"Loading orders...";
+
+
+if(!currentUser){
+
+box.innerHTML =
+"Please login.";
+
+return;
+}
+
+
+const {data,error} =
+await supabaseClient
+.from("orders")
+.select("*")
+.eq("user_id",currentUser.id)
+.order("created_at",{ascending:false});
+
+
+if(error){
+
+box.innerHTML =
+escapeHTML(error.message);
+
+return;
+}
+
+
+if(!data?.length){
+
+box.innerHTML =
+'<div class="empty">No orders yet.</div>';
+
+return;
+}
+
+
+box.innerHTML =
+data.map(order=>`
+
+<div class="admin-order">
+
+<strong>
+Order #${escapeHTML(order.id)}
+</strong>
+
+<p style="margin-top:8px">
+Total: ${money(order.total_amount)}
+</p>
+
+<p>
+Payment: ${escapeHTML(order.payment_method)}
+</p>
+
+<p>
+Status:
+<strong>${escapeHTML(order.status)}</strong>
+</p>
+
+<p style="color:#8f99a7;margin-top:8px">
+${new Date(order.created_at).toLocaleString()}
+</p>
+
+</div>
+
+`).join("");
+
+}
+
+
+/* ==========================================================
+OWNER
+========================================================== */
+
+async function openAdmin(){
+
+if(!currentUser){
+
+openLogin();
+
+alert("Owner login required.");
+
+return;
+}
+
+
+if(
+!OWNER_EMAIL ||
+OWNER_EMAIL==="rizwan.babu2023@gmail.com"
 ){
 
-  authMessage.innerText =
-    message;
+alert(
+"First set your owner email inside the code."
+);
+
+return;
+}
 
 
-  authMessage.style.color =
-    isError
-      ? "#ff6b6b"
-      : "#35d6ff";
+if(
+currentUser.email?.toLowerCase() !==
+OWNER_EMAIL.toLowerCase()
+){
+
+alert("Access denied. Owner only.");
+
+return;
 
 }
 
 
-function clearAuthMessage(){
+document
+.getElementById("adminDashboard")
+.style.display="block";
 
-  authMessage.innerText = "";
+await loadAdmin();
 
 }
 
 
-/* =========================================================
-   REGISTER / LOGIN
-   ========================================================= */
+function closeAdmin(){
 
-async function handleAuth(){
-
-  clearAuthMessage();
-
-
-  const email =
-    document
-      .getElementById("authEmail")
-      .value
-      .trim();
-
-
-  const password =
-    document
-      .getElementById("authPassword")
-      .value;
-
-
-  if(!email || !password){
-
-    showAuthMessage(
-      "Please enter email and password."
-    );
-
-    return;
-
-  }
-
-
-  /* =========================
-     REGISTER
-     ========================= */
-
-  if(authMode === "register"){
-
-    const name =
-      document
-        .getElementById("registerName")
-        .value
-        .trim();
-
-
-    if(!name){
-
-      showAuthMessage(
-        "Please enter your name."
-      );
-
-      return;
-
-    }
-
-
-    if(password.length < 6){
-
-      showAuthMessage(
-        "Password must be at least 6 characters."
-      );
-
-      return;
-
-    }
-
-
-    const {
-      data,
-      error
-    } =
-      await supabaseClient.auth.signUp({
-
-        email:email,
-
-        password:password,
-
-        options:{
-
-          data:{
-            full_name:name
-          }
-
-        }
-
-      });
-
-
-    if(error){
-
-      showAuthMessage(
-        error.message
-      );
-
-      return;
-
-    }
-
-
-    if(data.session){
-
-      showAuthMessage(
-        "Account created and logged in successfully!",
-        false
-      );
-
-      updateLoggedInUI(
-        data.user
-      );
-
-    }else{
-
-      showAuthMessage(
-        "Account created. Please check your email to confirm your account.",
-        false
-      );
-
-    }
-
-
-    return;
-
-  }
-
-
-  /* =========================
-     LOGIN
-     ========================= */
-
-  const {
-    data,
-    error
-  } =
-    await supabaseClient.auth
-      .signInWithPassword({
-
-        email:email,
-
-        password:password
-
-      });
-
-
-  if(error){
-
-    showAuthMessage(
-      error.message
-    );
-
-    return;
-
-  }
-
-
-  showAuthMessage(
-    "Login successful!",
-    false
-  );
-
-
-  updateLoggedInUI(
-    data.user
-  );
+document
+.getElementById("adminDashboard")
+.style.display="none";
 
 }
 
 
-/* =========================================================
-   LOGGED-IN USER UI
-   ========================================================= */
+/* ==========================================================
+ADMIN DATA
+========================================================== */
 
-function updateLoggedInUI(user){
+async function loadAdmin(){
 
-  if(!user){
-    return;
-  }
+await loadProducts();
 
+await loadAdminOrders();
 
-  document
-    .getElementById("loginButton")
-    .innerText =
-      "👤 Account";
-
-
-  accountEmail.innerText =
-    user.email;
-
-
-  accountBox.style.display =
-    "block";
+renderAdminProducts();
 
 }
 
 
-/* =========================================================
-   LOGOUT
-   ========================================================= */
+function renderAdminProducts(){
 
-async function logoutUser(){
-
-  const {
-    error
-  } =
-    await supabaseClient.auth
-      .signOut();
+document.getElementById("statProducts").innerText =
+products.length;
 
 
-  if(error){
+const box =
+document.getElementById("adminProducts");
 
-    showAuthMessage(
-      error.message
-    );
+if(!products.length){
 
-    return;
+box.innerHTML =
+'<div class="empty">No products.</div>';
 
-  }
-
-
-  document
-    .getElementById("loginButton")
-    .innerText =
-      "👤 Login";
+return;
+}
 
 
-  accountBox.style.display =
-    "none";
+box.innerHTML =
+products.map(p=>`
 
+<div class="admin-product">
 
-  authMode =
-    "login";
+<strong>
+${escapeHTML(p.name)}
+</strong>
 
+<p style="margin-top:5px">
+${money(p.price)}
+</p>
 
-  updateAuthUI();
+<p style="color:#8f99a7">
+${escapeHTML(p.category || "")}
+</p>
 
+<div class="admin-actions">
 
-  showAuthMessage(
-    "Logged out successfully.",
-    false
-  );
+<button
+class="small-btn"
+onclick="editProduct('${p.id}')">
+Edit
+</button>
+
+<button
+class="small-btn danger"
+onclick="deleteProduct('${p.id}')">
+Delete
+</button>
+
+</div>
+
+</div>
+
+`).join("");
 
 }
 
 
-/* =========================================================
-   CHECK EXISTING LOGIN SESSION
-   ========================================================= */
+/* ==========================================================
+ADD / EDIT PRODUCT
+========================================================== */
 
-async function checkUser(){
+async function saveProduct(){
 
-  const {
-    data:{
-      session
-    }
-  } =
-    await supabaseClient.auth
-      .getSession();
+if(!currentUser)return;
 
 
-  if(session){
+const name =
+document.getElementById("productName").value.trim();
 
-    updateLoggedInUI(
-      session.user
-    );
+const price =
+Number(document.getElementById("productPrice").value);
 
-  }
+const oldPrice =
+Number(document.getElementById("productOldPrice").value)||null;
+
+const category =
+document.getElementById("productCategory").value.trim();
+
+const image =
+document.getElementById("productImage").value.trim();
+
+const description =
+document.getElementById("productDescription").value.trim();
+
+const id =
+document.getElementById("editProductId").value;
+
+
+if(!name || !price || !category){
+
+document.getElementById("productMessage").innerText =
+"Name, price and category are required.";
+
+return;
+}
+
+
+let result;
+
+
+if(id){
+
+result =
+await supabaseClient
+.from("products")
+.update({
+
+name,
+price,
+old_price:oldPrice,
+category,
+image_url:image,
+description
+
+})
+.eq("id",id);
+
+}else{
+
+result =
+await supabaseClient
+.from("products")
+.insert({
+
+name,
+price,
+old_price:oldPrice,
+category,
+image_url:image,
+description
+
+});
 
 }
 
 
-/* =========================================================
-   AUTH STATE LISTENER
-   ========================================================= */
+if(result.error){
 
-supabaseClient.auth
-  .onAuthStateChange(
-    function(
-      event,
-      session
-    ){
+document.getElementById("productMessage").innerText =
+result.error.message;
 
-      if(session){
+return;
 
-        updateLoggedInUI(
-          session.user
-        );
-
-      }
-
-    }
-  );
+}
 
 
-/* =========================================================
-   START
-   ========================================================= */
+document.getElementById("productMessage").innerText =
+"Product saved.";
 
-checkUser();
+clearProductForm();
+
+await loadAdmin();
+
+}
+
+
+function editProduct(id){
+
+const p =
+products.find(x=>x.id===id);
+
+if(!p)return;
+
+
+document.getElementById("editProductId").value =
+p.id;
+
+document.getElementById("productName").value =
+p.name || "";
+
+document.getElementById("productPrice").value =
+p.price || "";
+
+document.getElementById("productOldPrice").value =
+p.old_price || "";
+
+document.getElementById("productCategory").value =
+p.category || "";
+
+document.getElementById("productImage").value =
+p.image_url || "";
+
+document.getElementById("productDescription").value =
+p.description || "";
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+
+function clearProductForm(){
+
+document.getElementById("editProductId").value="";
+
+document.getElementById("productName").value="";
+
+document.getElementById("productPrice").value="";
+
+document.getElementById("productOldPrice").value="";
+
+document.getElementById("productCategory").value="";
+
+document.getElementById("productImage").value="";
+
+document.getElementById("productDescription").value="";
+
+}
+
+
+/* ==========================================================
+DELETE PRODUCT
+========================================================== */
+
+async function deleteProduct(id){
+
+if(!confirm("Delete this product?"))return;
+
+
+const {error} =
+await supabaseClient
+.from("products")
+.delete()
+.eq("id",id);
+
+
+if(error){
+
+alert(error.message);
+
+return;
+
+}
+
+
+await loadAdmin();
+
+}
+
+
+/* ==========================================================
+ADMIN ORDERS
+========================================================== */
+
+async function loadAdminOrders(){
+
+const {data,error} =
+await supabaseClient
+.from("orders")
+.select("*")
+.order("created_at",{ascending:false});
+
+
+if(error){
+
+console.error(error);
+
+return;
+
+}
+
+
+const orders =
+data || [];
+
+
+document.getElementById("statOrders").innerText =
+orders.length;
+
+
+const sales =
+orders.reduce(
+(sum,o)=>
+sum+Number(o.total_amount || 0),
+0
+);
+
+
+document.getElementById("statSales").innerText =
+money(sales);
+
+
+const box =
+document.getElementById("adminOrders");
+
+
+if(!orders.length){
+
+box.innerHTML =
+'<div class="empty">No orders.</div>';
+
+return;
+
+}
+
+
+box.innerHTML =
+orders.map(o=>`
+
+<div class="admin-order">
+
+<strong>
+Order #${escapeHTML(o.id)}
+</strong>
+
+<p style="margin-top:7px">
+Customer:
+${escapeHTML(o.customer_name)}
+</p>
+
+<p>
+Phone:
+${escapeHTML(o.phone)}
+</p>
+
+<p>
+Total:
+${money(o.total_amount)}
+</p>
+
+<p>
+Payment:
+${escapeHTML(o.payment_method)}
+</p>
+
+<p>
+Address:
+${escapeHTML(o.address)},
+${escapeHTML(o.city)}
+-
+${escapeHTML(o.pincode)}
+</p>
+
+<div class="admin-actions">
+
+<select
+class="order-status"
+id="status-${escapeHTML(o.id)}">
+
+<option ${o.status==="Pending"?"selected":""}>
+Pending
+</option>
+
+<option ${o.status==="Confirmed"?"selected":""}>
+Confirmed
+</option>
+
+<option ${o.status==="Shipped"?"selected":""}>
+Shipped
+</option>
+
+<option ${o.status==="Delivered"?"selected":""}>
+Delivered
+</option>
+
+<option ${o.status==="Cancelled"?"selected":""}>
+Cancelled
+</option>
+
+</select>
+
+<button
+class="small-btn"
+onclick="updateOrderStatus('${o.id}')">
+Update
+</button>
+
+</div>
+
+</div>
+
+`).join("");
+
+}
+
+
+async function updateOrderStatus(id){
+
+const select =
+document.getElementById(
+"status-"+id
+);
+
+if(!select)return;
+
+
+const {error} =
+await supabaseClient
+.from("orders")
+.update({
+status:select.value
+})
+.eq("id",id);
+
+
+if(error){
+
+alert(error.message);
+
+return;
+
+}
+
+
+alert("Order status updated.");
+
+await loadAdminOrders();
+
+}
+
+
+/* ==========================================================
+ADMIN ACCESS
+==========================================================
+
+For now, open the owner dashboard from browser console:
+
+openAdmin()
+
+After we confirm everything works, we can add a private
+owner button without exposing it to customers.
+========================================================== */
+
+
+/* ==========================================================
+START
+========================================================== */
+
+document
+.getElementById("productsSection")
+.addEventListener("click",()=>{});
+
+
+function scrollToProducts(){
+
+document
+.getElementById("productsSection")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+loadCart();
+
+loadSession();
+
+loadProducts();
 
 </script>
 
