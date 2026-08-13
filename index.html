@@ -184,7 +184,6 @@ footer{
   color:#7f8997;
 }
 
-/* MODAL */
 .modal{
   position:fixed;
   inset:0;
@@ -376,8 +375,13 @@ footer{
 placeholder="Search products, categories and more...">
 </div>
 
-<button class="nav-btn" onclick="openCart()">🛒 <span id="cartCount">0</span></button>
-<button class="nav-btn" id="accountButton" onclick="openAccount()">👤 Login</button>
+<button class="nav-btn" onclick="openCart()">
+🛒 <span id="cartCount">0</span>
+</button>
+
+<button class="nav-btn" id="accountButton">
+👤 Login
+</button>
 
 </div>
 </header>
@@ -422,10 +426,10 @@ Discover trending products, smart deals and everyday essentials
 <p style="margin-top:15px;">© 2026 ZOVRA. All Rights Reserved.</p>
 </footer>
 
-
-<!-- AUTH MODAL -->
+<!-- AUTH -->
 <div class="modal" id="authModal">
 <div class="modal-box">
+
 <button class="close" onclick="closeModal('authModal')">×</button>
 
 <h2 id="authTitle">Login to ZOVRA</h2>
@@ -442,12 +446,14 @@ Discover trending products, smart deals and everyday essentials
 <input id="authEmail" type="email" placeholder="you@example.com">
 </div>
 
-<div class="form-group" id="passwordGroup">
+<div class="form-group">
 <label>Password</label>
 <input id="authPassword" type="password" placeholder="Password">
 </div>
 
-<button class="primary" id="authSubmit" onclick="submitAuth()">Login</button>
+<button class="primary" id="authSubmit" onclick="submitAuth()">
+Login
+</button>
 
 <button class="link-btn" id="forgotButton" onclick="showForgot()">
 Forgot Password?
@@ -460,51 +466,65 @@ Create a new account
 </div>
 </div>
 
-
 <!-- RESET PASSWORD -->
 <div class="modal" id="resetModal">
 <div class="modal-box">
+
 <h2>Set New Password</h2>
+
 <div id="resetMessage" class="message"></div>
 
 <div class="form-group">
 <label>New Password</label>
-<input id="newPassword" type="password" placeholder="New password">
+<input id="newPassword" type="password">
 </div>
 
 <div class="form-group">
 <label>Confirm Password</label>
-<input id="confirmPassword" type="password" placeholder="Confirm password">
+<input id="confirmPassword" type="password">
 </div>
 
-<button class="primary" onclick="updatePassword()">Update Password</button>
-</div>
-</div>
+<button class="primary" onclick="updatePassword()">
+Update Password
+</button>
 
+</div>
+</div>
 
 <!-- CART -->
 <div class="modal" id="cartModal">
 <div class="modal-box">
+
 <button class="close" onclick="closeModal('cartModal')">×</button>
+
 <h2>🛒 Your Cart</h2>
+
 <div id="cartItems"></div>
-<div class="total">Total: ₹<span id="cartTotal">0</span></div>
-<button class="primary" onclick="checkout()">Checkout — COD</button>
-</div>
+
+<div class="total">
+Total: ₹<span id="cartTotal">0</span>
 </div>
 
+<button class="primary" onclick="checkout()">
+Checkout — COD
+</button>
+
+</div>
+</div>
 
 <!-- CHECKOUT -->
 <div class="modal" id="checkoutModal">
 <div class="modal-box">
+
 <button class="close" onclick="closeModal('checkoutModal')">×</button>
+
 <h2>📦 COD Checkout</h2>
 
 <div id="checkoutMessage" class="message"></div>
 
 <div class="form-group">
 <label>Full Name</label>
-<input id="customerName" type="text">
+<input id="customerName">
 </div>
 
 <div class="form-group">
@@ -519,39 +539,46 @@ Create a new account
 
 <div class="form-group">
 <label>City</label>
-<input id="customerCity" type="text">
+<input id="customerCity">
 </div>
 
 <div class="form-group">
 <label>PIN Code</label>
-<input id="customerPincode" type="text">
+<input id="customerPincode">
 </div>
 
-<button class="primary" onclick="placeOrder()">Place COD Order</button>
-</div>
-</div>
+<button class="primary" onclick="placeOrder()">
+Place COD Order
+</button>
 
+</div>
+</div>
 
 <!-- ACCOUNT -->
 <div class="modal" id="accountModal">
 <div class="modal-box">
+
 <button class="close" onclick="closeModal('accountModal')">×</button>
+
 <h2>👤 My Account</h2>
 
 <div id="accountInfo"></div>
 
 <h3 style="margin:20px 0 12px;">My Orders</h3>
+
 <div id="myOrders"></div>
 
-<button class="secondary" onclick="logout()">Logout</button>
+<button class="secondary" onclick="logout()">
+Logout
+</button>
 
 </div>
 </div>
-
 
 <!-- ADMIN -->
 <div class="modal" id="adminModal">
 <div class="modal-box" style="width:min(1000px,100%)">
+
 <button class="close" onclick="closeModal('adminModal')">×</button>
 
 <div class="admin-header">
@@ -560,25 +587,42 @@ Create a new account
 </div>
 
 <div class="admin-tabs">
-<button class="admin-tab active" onclick="showAdminTab('ordersTab',this)">Orders</button>
-<button class="admin-tab" onclick="showAdminTab('productsTab',this)">Products</button>
+
+<button class="admin-tab active"
+onclick="showAdminTab('ordersTab',this)">
+Orders
+</button>
+
+<button class="admin-tab"
+onclick="showAdminTab('productsTab',this)">
+Products
+</button>
+
 </div>
 
 <div id="ordersTab">
-<h3 style="margin-bottom:15px;">Customer Orders</h3>
+
+<h3 style="margin-bottom:15px;">
+Customer Orders
+</h3>
+
 <div id="adminOrders"></div>
+
 </div>
 
 <div id="productsTab" class="hidden">
 
-<h3 style="margin-bottom:15px;">Add Product</h3>
+<h3 style="margin-bottom:15px;">
+Add Product
+</h3>
 
 <div class="admin-grid">
 
 <div>
+
 <div class="form-group">
 <label>Product Name</label>
-<input id="productName" type="text">
+<input id="productName">
 </div>
 
 <div class="form-group">
@@ -595,11 +639,14 @@ Create a new account
 <label>Old Price</label>
 <input id="productOldPrice" type="number">
 </div>
+
 </div>
 
 <div>
+
 <div class="form-group">
 <label>Category</label>
+
 <select id="productCategory">
 <option value="electronics">Electronics</option>
 <option value="home">Home</option>
@@ -607,6 +654,7 @@ Create a new account
 <option value="beauty">Beauty</option>
 <option value="fitness">Fitness</option>
 </select>
+
 </div>
 
 <div class="form-group">
@@ -619,12 +667,18 @@ Create a new account
 <input id="productStock" type="number" value="10">
 </div>
 
-<button class="primary" onclick="addProduct()">Add Product</button>
-</div>
+<button class="primary" onclick="addProduct()">
+Add Product
+</button>
 
 </div>
 
-<h3 style="margin:25px 0 15px;">Current Products</h3>
+</div>
+
+<h3 style="margin:25px 0 15px;">
+Current Products
+</h3>
+
 <div id="adminProducts"></div>
 
 </div>
@@ -632,17 +686,16 @@ Create a new account
 </div>
 </div>
 
-
 <script>
-const SUPABASE_URL = "https://lfcygcjrqfxhaalhqqaz.supabase.co";
+
+const SUPABASE_URL =
+"https://lfcygcjrqfxhaalhqqaz.supabase.co";
 
 const SUPABASE_KEY =
 "sb_publishable_Cvp6MCG6KGI6gLDRGcWKtw__WBNCYCz";
 
-const { createClient } =
-supabase;
-
-const db = createClient(
+const db =
+supabase.createClient(
 SUPABASE_URL,
 SUPABASE_KEY
 );
@@ -650,183 +703,364 @@ SUPABASE_KEY
 const OWNER_EMAIL =
 "rizwan.babu2023@gmail.com";
 
-let currentUser = null;
-let authMode = "login";
-let cart = JSON.parse(localStorage.getItem("zovra_cart") || "[]");
+/* IMPORTANT:
+   Your GitHub Pages website URL
+*/
+const SITE_URL =
+"https://jod654.github.io/zovra-store/";
 
+let currentUser=null;
+let authMode="login";
+
+let cart =
+JSON.parse(
+localStorage.getItem("zovra_cart") || "[]"
+);
+
+
+/* CART */
 
 function saveCart(){
-localStorage.setItem("zovra_cart",JSON.stringify(cart));
+
+localStorage.setItem(
+"zovra_cart",
+JSON.stringify(cart)
+);
+
 updateCartCount();
+
 }
+
 
 function updateCartCount(){
+
 document.getElementById("cartCount").innerText =
-cart.reduce((sum,item)=>sum+item.qty,0);
+cart.reduce(
+(sum,item)=>sum+item.qty,
+0
+);
+
 }
 
+
+/* MODALS */
 
 function openModal(id){
-document.getElementById(id).classList.add("show");
+
+document
+.getElementById(id)
+.classList.add("show");
+
 }
+
 
 function closeModal(id){
-document.getElementById(id).classList.remove("show");
+
+document
+.getElementById(id)
+.classList.remove("show");
+
 }
 
 
+/* MESSAGE */
+
 function message(id,text){
+
 const el=document.getElementById(id);
+
 el.innerText=text;
+
 el.classList.add("show");
+
 }
 
 
 function clearMessage(id){
-document.getElementById(id).classList.remove("show");
+
+document
+.getElementById(id)
+.classList.remove("show");
+
 }
 
+
+/* AUTH MODE */
 
 function switchAuthMode(){
 
 clearMessage("authMessage");
 
 if(authMode==="login"){
+
 authMode="register";
 
-document.getElementById("authTitle").innerText="Create ZOVRA Account";
-document.getElementById("authSubmit").innerText="Register";
-document.getElementById("nameGroup").classList.remove("hidden");
-document.getElementById("forgotButton").classList.add("hidden");
-document.getElementById("switchAuth").innerText="Already have an account? Login";
+document.getElementById("authTitle").innerText =
+"Create ZOVRA Account";
+
+document.getElementById("authSubmit").innerText =
+"Register";
+
+document
+.getElementById("nameGroup")
+.classList.remove("hidden");
+
+document
+.getElementById("forgotButton")
+.classList.add("hidden");
+
+document.getElementById("switchAuth").innerText =
+"Already have an account? Login";
 
 }else{
+
 authMode="login";
 
-document.getElementById("authTitle").innerText="Login to ZOVRA";
-document.getElementById("authSubmit").innerText="Login";
-document.getElementById("nameGroup").classList.add("hidden");
-document.getElementById("forgotButton").classList.remove("hidden");
-document.getElementById("switchAuth").innerText="Create a new account";
-}
+document.getElementById("authTitle").innerText =
+"Login to ZOVRA";
+
+document.getElementById("authSubmit").innerText =
+"Login";
+
+document
+.getElementById("nameGroup")
+.classList.add("hidden");
+
+document
+.getElementById("forgotButton")
+.classList.remove("hidden");
+
+document.getElementById("switchAuth").innerText =
+"Create a new account";
+
 }
 
+}
+
+
+/* ACCOUNT */
 
 function openAccount(){
 
 if(currentUser){
+
 showAccount();
+
 }else{
+
 authMode="login";
-document.getElementById("authTitle").innerText="Login to ZOVRA";
-document.getElementById("authSubmit").innerText="Login";
-document.getElementById("nameGroup").classList.add("hidden");
-document.getElementById("forgotButton").classList.remove("hidden");
-document.getElementById("switchAuth").innerText="Create a new account";
+
+document.getElementById("authTitle").innerText =
+"Login to ZOVRA";
+
+document.getElementById("authSubmit").innerText =
+"Login";
+
+document
+.getElementById("nameGroup")
+.classList.add("hidden");
+
+document
+.getElementById("forgotButton")
+.classList.remove("hidden");
+
+document.getElementById("switchAuth").innerText =
+"Create a new account";
+
 openModal("authModal");
-}
+
 }
 
+}
+
+
+/* LOGIN / REGISTER */
 
 async function submitAuth(){
 
 clearMessage("authMessage");
 
 const email =
-document.getElementById("authEmail").value.trim();
+document.getElementById("authEmail")
+.value.trim();
 
 const password =
-document.getElementById("authPassword").value;
+document.getElementById("authPassword")
+.value;
 
 const name =
-document.getElementById("authName").value.trim();
+document.getElementById("authName")
+.value.trim();
+
 
 if(!email || !password){
-message("authMessage","Please enter email and password.");
+
+message(
+"authMessage",
+"Please enter email and password."
+);
+
 return;
+
 }
+
 
 if(authMode==="register"){
 
 if(!name){
-message("authMessage","Please enter your name.");
-return;
-}
-
-const {data,error} =
-await db.auth.signUp({
-email:email,
-password:password,
-options:{
-data:{
-full_name:name
-}
-}
-});
-
-if(error){
-message("authMessage",error.message);
-return;
-}
 
 message(
 "authMessage",
-"Registration successful. Check your email to confirm your account."
+"Please enter your name."
+);
+
+return;
+
+}
+
+
+/*
+IMPORTANT FIX:
+Registration confirmation will return
+to your GitHub Pages website.
+*/
+
+const {data,error} =
+await db.auth.signUp({
+
+email:email,
+
+password:password,
+
+options:{
+
+data:{
+full_name:name
+},
+
+emailRedirectTo:SITE_URL
+
+}
+
+});
+
+
+if(error){
+
+message(
+"authMessage",
+error.message
+);
+
+return;
+
+}
+
+
+message(
+"authMessage",
+"Registration successful! Check your email and click the confirmation link."
 );
 
 }else{
 
+
 const {data,error} =
 await db.auth.signInWithPassword({
+
 email:email,
+
 password:password
+
 });
 
+
 if(error){
-message("authMessage",error.message);
+
+message(
+"authMessage",
+error.message
+);
+
 return;
+
 }
+
 
 currentUser=data.user;
 
 closeModal("authModal");
+
 await afterLogin();
-}
+
 }
 
+}
+
+
+/* FORGOT PASSWORD */
 
 async function showForgot(){
 
 const email =
-document.getElementById("authEmail").value.trim();
+document.getElementById("authEmail")
+.value.trim();
+
 
 if(!email){
-message("authMessage","Enter your email first.");
+
+message(
+"authMessage",
+"Enter your email first."
+);
+
 return;
+
 }
 
+
+/*
+IMPORTANT FIX:
+Password reset returns to GitHub Pages.
+*/
+
 const redirectUrl =
-window.location.origin + window.location.pathname;
+SITE_URL;
+
 
 const {error} =
 await db.auth.resetPasswordForEmail(
+
 email,
+
 {
 redirectTo:redirectUrl
 }
+
 );
 
+
 if(error){
-message("authMessage",error.message);
+
+message(
+"authMessage",
+error.message
+);
+
 return;
+
 }
+
 
 message(
 "authMessage",
 "Password reset email sent. Check your Gmail."
 );
+
 }
 
+
+/* PASSWORD UPDATE */
 
 async function updatePassword(){
 
@@ -838,36 +1072,67 @@ document.getElementById("newPassword").value;
 const confirm =
 document.getElementById("confirmPassword").value;
 
-if(password.length < 6){
-message("resetMessage","Password must be at least 6 characters.");
-return;
-}
 
-if(password !== confirm){
-message("resetMessage","Passwords do not match.");
-return;
-}
-
-const {error} =
-await db.auth.updateUser({
-password:password
-});
-
-if(error){
-message("resetMessage",error.message);
-return;
-}
+if(password.length<6){
 
 message(
 "resetMessage",
-"Password updated successfully. You can now login."
+"Password must be at least 6 characters."
 );
 
-setTimeout(()=>{
-closeModal("resetModal");
-},1500);
+return;
+
 }
 
+
+if(password!==confirm){
+
+message(
+"resetMessage",
+"Passwords do not match."
+);
+
+return;
+
+}
+
+
+const {error} =
+await db.auth.updateUser({
+
+password:password
+
+});
+
+
+if(error){
+
+message(
+"resetMessage",
+error.message
+);
+
+return;
+
+}
+
+
+message(
+"resetMessage",
+"Password updated successfully."
+);
+
+
+setTimeout(()=>{
+
+closeModal("resetModal");
+
+},1500);
+
+}
+
+
+/* LOGOUT */
 
 async function logout(){
 
@@ -876,26 +1141,39 @@ await db.auth.signOut();
 currentUser=null;
 
 closeModal("accountModal");
+
 closeModal("adminModal");
 
-document.getElementById("accountButton").innerText="👤 Login";
+document.getElementById("accountButton").innerText =
+"👤 Login";
+
 }
 
+
+/* AFTER LOGIN */
 
 async function afterLogin(){
 
-document.getElementById("accountButton").innerText="👤 Account";
+document.getElementById("accountButton").innerText =
+"👤 Account";
 
 await loadOrders();
 
-if(currentUser.email.toLowerCase()===OWNER_EMAIL.toLowerCase()){
 
-document.getElementById("accountButton").innerText="👑 Admin";
+if(
+currentUser.email.toLowerCase() ===
+OWNER_EMAIL.toLowerCase()
+){
+
+document.getElementById("accountButton").innerText =
+"👑 Admin";
 
 }
 
 }
 
+
+/* PRODUCTS */
 
 async function loadProducts(){
 
@@ -905,113 +1183,180 @@ await db
 .select("*")
 .order("created_at",{ascending:false});
 
+
 if(error){
+
 console.error(error);
+
 return;
+
 }
+
 
 const container =
 document.getElementById("products");
 
 container.innerHTML="";
 
+
 if(!data || data.length===0){
 
 container.innerHTML=`
-<div style="grid-column:1/-1;text-align:center;padding:50px;color:#8f99a7">
+
+<div style="
+grid-column:1/-1;
+text-align:center;
+padding:50px;
+color:#8f99a7">
+
 No products yet. Owner can add products from Admin Dashboard.
-</div>`;
+
+</div>
+
+`;
 
 return;
+
 }
+
 
 data.forEach(product=>{
 
-const article=document.createElement("article");
+const article =
+document.createElement("article");
 
 article.className="product";
-article.dataset.category=product.category || "";
+
+article.dataset.category =
+product.category || "";
+
 
 article.innerHTML=`
 
-<img class="product-img"
-src="${escapeHtml(product.image_url || "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=80")}"
+<img
+class="product-img"
+src="${escapeHtml(
+product.image_url ||
+"https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=80"
+)}"
 alt="${escapeHtml(product.name)}">
+
 
 <div class="product-info">
 
-<h3>${escapeHtml(product.name)}</h3>
+<h3>
+${escapeHtml(product.name)}
+</h3>
 
-<p>${escapeHtml(product.description || "")}</p>
+<p>
+${escapeHtml(product.description || "")}
+</p>
 
 <div>
-<span class="price">₹${Number(product.price).toLocaleString("en-IN")}</span>
+
+<span class="price">
+₹${Number(product.price)
+.toLocaleString("en-IN")}
+</span>
 
 ${
 product.old_price
 ?
-`<span class="old-price">₹${Number(product.old_price).toLocaleString("en-IN")}</span>`
+`<span class="old-price">
+₹${Number(product.old_price)
+.toLocaleString("en-IN")}
+</span>`
 :""
 }
 
 </div>
 
+
 <div class="actions">
 
-<button class="cart-btn"
+<button
+class="cart-btn"
 onclick='addProductToCart(${JSON.stringify(product)})'>
+
 Add to Cart
+
 </button>
 
-<button class="buy-btn"
+
+<button
+class="buy-btn"
 onclick='buyNow(${JSON.stringify(product)})'>
+
 Buy Now
+
 </button>
 
 </div>
 
 </div>
+
 `;
+
 
 container.appendChild(article);
 
 });
+
 }
 
+
+/* ESCAPE HTML */
 
 function escapeHtml(value){
 
 return String(value)
+
 .replaceAll("&","&amp;")
 .replaceAll("<","&lt;")
 .replaceAll(">","&gt;")
 .replaceAll('"',"&quot;")
 .replaceAll("'","&#039;");
+
 }
 
+
+/* ADD CART */
 
 function addProductToCart(product){
 
 const existing =
-cart.find(item=>item.id===product.id);
+cart.find(
+item=>item.id===product.id
+);
+
 
 if(existing){
+
 existing.qty++;
+
 }else{
 
 cart.push({
+
 id:product.id,
+
 name:product.name,
+
 price:Number(product.price),
+
 image_url:product.image_url,
+
 qty:1
+
 });
 
 }
 
+
 saveCart();
 
 alert("Added to cart!");
+
 }
 
 
@@ -1020,13 +1365,18 @@ function buyNow(product){
 addProductToCart(product);
 
 openCart();
+
 }
 
+
+/* CART */
 
 function openCart(){
 
 renderCart();
+
 openModal("cartModal");
+
 }
 
 
@@ -1037,62 +1387,95 @@ document.getElementById("cartItems");
 
 container.innerHTML="";
 
+
 if(cart.length===0){
 
-container.innerHTML=
-`<p style="color:#8f99a7">Your cart is empty.</p>`;
+container.innerHTML =
+`<p style="color:#8f99a7">
+Your cart is empty.
+</p>`;
 
-document.getElementById("cartTotal").innerText="0";
+document.getElementById("cartTotal").innerText =
+"0";
 
 return;
+
 }
+
 
 let total=0;
 
+
 cart.forEach((item,index)=>{
 
-const itemTotal=item.price*item.qty;
+const itemTotal =
+item.price*item.qty;
 
 total+=itemTotal;
 
-const div=document.createElement("div");
+
+const div =
+document.createElement("div");
 
 div.className="cart-item";
+
 
 div.innerHTML=`
 
 <div class="cart-row">
 
 <div>
-<strong>${escapeHtml(item.name)}</strong>
+
+<strong>
+${escapeHtml(item.name)}
+</strong>
+
 <br>
+
 <span style="color:#8f99a7">
-₹${item.price.toLocaleString("en-IN")} × ${item.qty}
+
+₹${item.price.toLocaleString("en-IN")}
+× ${item.qty}
+
 </span>
+
 </div>
+
 
 <div>
 
-<button class="small-btn"
-onclick="changeQty(${index},-1)">−</button>
+<button
+class="small-btn"
+onclick="changeQty(${index},-1)">
+−
+</button>
 
-<button class="small-btn"
-onclick="changeQty(${index},1)">+</button>
+<button
+class="small-btn"
+onclick="changeQty(${index},1)">
++
+</button>
 
-<button class="small-btn danger"
-onclick="removeCart(${index})">×</button>
+<button
+class="small-btn danger"
+onclick="removeCart(${index})">
+×
+</button>
 
 </div>
 
 </div>
+
 `;
 
 container.appendChild(div);
 
 });
 
+
 document.getElementById("cartTotal").innerText =
 total.toLocaleString("en-IN");
+
 }
 
 
@@ -1100,12 +1483,18 @@ function changeQty(index,value){
 
 cart[index].qty+=value;
 
+
 if(cart[index].qty<=0){
+
 cart.splice(index,1);
+
 }
 
+
 saveCart();
+
 renderCart();
+
 }
 
 
@@ -1114,56 +1503,87 @@ function removeCart(index){
 cart.splice(index,1);
 
 saveCart();
+
 renderCart();
+
 }
 
+
+/* CHECKOUT */
 
 async function checkout(){
 
 if(!currentUser){
 
 closeModal("cartModal");
+
 openAccount();
 
-alert("Please login/register before checkout.");
+alert(
+"Please login/register before checkout."
+);
 
 return;
+
 }
+
 
 if(cart.length===0){
+
 alert("Your cart is empty.");
+
 return;
+
 }
 
+
 closeModal("cartModal");
+
 
 document.getElementById("customerName").value =
 currentUser.user_metadata?.full_name || "";
 
+
 openModal("checkoutModal");
+
 }
 
+
+/* PLACE ORDER */
 
 async function placeOrder(){
 
 clearMessage("checkoutMessage");
 
+
 const customer_name =
-document.getElementById("customerName").value.trim();
+document.getElementById("customerName")
+.value.trim();
 
 const phone =
-document.getElementById("customerPhone").value.trim();
+document.getElementById("customerPhone")
+.value.trim();
 
 const address =
-document.getElementById("customerAddress").value.trim();
+document.getElementById("customerAddress")
+.value.trim();
 
 const city =
-document.getElementById("customerCity").value.trim();
+document.getElementById("customerCity")
+.value.trim();
 
 const pincode =
-document.getElementById("customerPincode").value.trim();
+document.getElementById("customerPincode")
+.value.trim();
 
-if(!customer_name || !phone || !address || !city || !pincode){
+
+if(
+!customer_name ||
+!phone ||
+!address ||
+!city ||
+!pincode
+){
 
 message(
 "checkoutMessage",
@@ -1171,28 +1591,34 @@ message(
 );
 
 return;
+
 }
+
 
 const total =
 cart.reduce(
-(sum,item)=>sum+(item.price*item.qty),
+(sum,item)=>
+sum+(item.price*item.qty),
 0
 );
 
+
 const {error} =
-await db.from("orders").insert({
+await db
+.from("orders")
+.insert({
 
 user_id:currentUser.id,
 
-customer_name:customer_name,
+customer_name,
 
-phone:phone,
+phone,
 
-address:address,
+address,
 
-city:city,
+city,
 
-pincode:pincode,
+pincode,
 
 items:cart,
 
@@ -1204,6 +1630,7 @@ status:"Pending"
 
 });
 
+
 if(error){
 
 console.error(error);
@@ -1214,28 +1641,39 @@ message(
 );
 
 return;
+
 }
+
 
 cart=[];
 
 saveCart();
+
 
 message(
 "checkoutMessage",
 "🎉 Order placed successfully!"
 );
 
+
 await loadOrders();
 
+
 setTimeout(()=>{
+
 closeModal("checkoutModal");
+
 },1500);
+
 }
 
+
+/* MY ORDERS */
 
 async function loadOrders(){
 
 if(!currentUser)return;
+
 
 const {data,error} =
 await db
@@ -1244,80 +1682,118 @@ await db
 .eq("user_id",currentUser.id)
 .order("created_at",{ascending:false});
 
+
 if(error){
+
 console.error(error);
+
 return;
+
 }
+
 
 const container =
 document.getElementById("myOrders");
 
 container.innerHTML="";
 
+
 if(!data || data.length===0){
 
-container.innerHTML=
-`<p style="color:#8f99a7">No orders yet.</p>`;
+container.innerHTML =
+`<p style="color:#8f99a7">
+No orders yet.
+</p>`;
 
 return;
+
 }
+
 
 data.forEach(order=>{
 
-const div=document.createElement("div");
+const div =
+document.createElement("div");
 
 div.className="order-item";
 
+
 div.innerHTML=`
 
-<strong>Order #${order.id.slice(0,8)}</strong>
+<strong>
+Order #${order.id.slice(0,8)}
+</strong>
 
 <div class="order-details">
 
-Total: ₹${Number(order.total_amount).toLocaleString("en-IN")}
+Total:
+₹${Number(order.total_amount)
+.toLocaleString("en-IN")}
+
 <br>
 
-Payment: ${escapeHtml(order.payment_method)}
+Payment:
+${escapeHtml(order.payment_method)}
+
 <br>
 
 Status:
-<span class="badge">${escapeHtml(order.status)}</span>
+
+<span class="badge">
+${escapeHtml(order.status)}
+</span>
+
 <br>
 
 Date:
-${new Date(order.created_at).toLocaleString("en-IN")}
+${new Date(order.created_at)
+.toLocaleString("en-IN")}
 
 </div>
+
 `;
+
 
 container.appendChild(div);
 
 });
+
 }
 
+
+/* ACCOUNT */
 
 async function showAccount(){
 
 if(!currentUser)return;
 
+
 document.getElementById("accountInfo").innerHTML=`
 
 <p>
 <strong>Name:</strong>
-${escapeHtml(currentUser.user_metadata?.full_name || "Customer")}
+${escapeHtml(
+currentUser.user_metadata?.full_name ||
+"Customer"
+)}
 </p>
 
 <p style="margin-top:8px">
 <strong>Email:</strong>
 ${escapeHtml(currentUser.email)}
 </p>
+
 `;
+
 
 await loadOrders();
 
 openModal("accountModal");
+
 }
 
+
+/* ADMIN */
 
 async function openAdmin(){
 
@@ -1326,27 +1802,46 @@ if(!currentUser){
 openAccount();
 
 return;
+
 }
 
-if(currentUser.email.toLowerCase()!==OWNER_EMAIL.toLowerCase()){
 
-alert("Access denied. Owner only.");
+if(
+currentUser.email.toLowerCase() !==
+OWNER_EMAIL.toLowerCase()
+){
+
+alert(
+"Access denied. Owner only."
+);
 
 return;
+
 }
 
+
 await loadAdminOrders();
+
 await loadAdminProducts();
 
 openModal("adminModal");
+
 }
 
 
-document.getElementById("accountButton")
-.addEventListener("click",async function(){
+/* ADMIN BUTTON */
 
-if(currentUser &&
-currentUser.email.toLowerCase()===OWNER_EMAIL.toLowerCase()){
+document
+.getElementById("accountButton")
+.addEventListener(
+"click",
+async function(){
+
+if(
+currentUser &&
+currentUser.email.toLowerCase() ===
+OWNER_EMAIL.toLowerCase()
+){
 
 await openAdmin();
 
@@ -1356,8 +1851,11 @@ openAccount();
 
 }
 
-});
+}
+);
 
+
+/* ADMIN ORDERS */
 
 async function loadAdminOrders(){
 
@@ -1367,26 +1865,37 @@ await db
 .select("*")
 .order("created_at",{ascending:false});
 
+
 const container =
 document.getElementById("adminOrders");
 
+
 if(error){
 
-container.innerHTML=
-`<div class="message show">${escapeHtml(error.message)}</div>`;
+container.innerHTML =
+`<div class="message show">
+${escapeHtml(error.message)}
+</div>`;
 
 return;
+
 }
+
 
 container.innerHTML="";
 
+
 if(!data || data.length===0){
 
-container.innerHTML=
-`<p style="color:#8f99a7">No customer orders yet.</p>`;
+container.innerHTML =
+`<p style="color:#8f99a7">
+No customer orders yet.
+</p>`;
 
 return;
+
 }
+
 
 data.forEach(order=>{
 
@@ -1395,22 +1904,31 @@ Array.isArray(order.items)
 ? order.items
 : [];
 
-const div=document.createElement("div");
+
+const div =
+document.createElement("div");
 
 div.className="admin-item";
 
+
 div.innerHTML=`
 
-<strong>Order #${order.id.slice(0,8)}</strong>
+<strong>
+Order #${order.id.slice(0,8)}
+</strong>
 
 <div class="order-details">
 
 Customer:
-<strong>${escapeHtml(order.customer_name)}</strong>
+<strong>
+${escapeHtml(order.customer_name)}
+</strong>
+
 <br>
 
 📞 Phone:
 ${escapeHtml(order.phone)}
+
 <br>
 
 📍 Address:
@@ -1418,64 +1936,112 @@ ${escapeHtml(order.address)},
 ${escapeHtml(order.city)}
 -
 ${escapeHtml(order.pincode)}
+
 <br>
 
 💰 Total:
-₹${Number(order.total_amount).toLocaleString("en-IN")}
+₹${Number(order.total_amount)
+.toLocaleString("en-IN")}
+
 <br>
 
 💳 Payment:
 ${escapeHtml(order.payment_method)}
+
 <br>
 
 📅 Date:
-${new Date(order.created_at).toLocaleString("en-IN")}
+${new Date(order.created_at)
+.toLocaleString("en-IN")}
+
 <br>
 
 📦 Status:
-<span class="badge">${escapeHtml(order.status)}</span>
+
+<span class="badge">
+${escapeHtml(order.status)}
+</span>
 
 <br><br>
 
 <strong>Products:</strong>
 
 ${items.map(item=>
-`${escapeHtml(item.name)} × ${item.qty}`
+`${escapeHtml(item.name)}
+× ${item.qty}`
 ).join("<br>")}
 
 </div>
 
+
 <div style="margin-top:12px">
 
-<select id="status-${order.id}"
-style="padding:8px;background:#20252d;color:white;border:1px solid #353c47;border-radius:7px">
+<select
+id="status-${order.id}"
+style="
+padding:8px;
+background:#20252d;
+color:white;
+border:1px solid #353c47;
+border-radius:7px">
 
-<option ${order.status==="Pending"?"selected":""}>Pending</option>
-<option ${order.status==="Confirmed"?"selected":""}>Confirmed</option>
-<option ${order.status==="Shipped"?"selected":""}>Shipped</option>
-<option ${order.status==="Delivered"?"selected":""}>Delivered</option>
-<option ${order.status==="Cancelled"?"selected":""}>Cancelled</option>
+<option
+${order.status==="Pending"?"selected":""}>
+Pending
+</option>
+
+<option
+${order.status==="Confirmed"?"selected":""}>
+Confirmed
+</option>
+
+<option
+${order.status==="Shipped"?"selected":""}>
+Shipped
+</option>
+
+<option
+${order.status==="Delivered"?"selected":""}>
+Delivered
+</option>
+
+<option
+${order.status==="Cancelled"?"selected":""}>
+Cancelled
+</option>
 
 </select>
 
-<button class="small-btn"
+
+<button
+class="small-btn"
 onclick="updateOrderStatus('${order.id}')">
+
 Update Status
+
 </button>
 
 </div>
+
 `;
+
 
 container.appendChild(div);
 
 });
+
 }
 
+
+/* UPDATE ORDER */
 
 async function updateOrderStatus(id){
 
 const status =
-document.getElementById("status-"+id).value;
+document.getElementById(
+"status-"+id
+).value;
+
 
 const {error} =
 await db
@@ -1483,17 +2049,24 @@ await db
 .update({status:status})
 .eq("id",id);
 
+
 if(error){
 
 alert(error.message);
+
 return;
+
 }
+
 
 alert("Order status updated.");
 
 await loadAdminOrders();
+
 }
 
+
+/* ADMIN PRODUCTS */
 
 async function loadAdminProducts(){
 
@@ -1503,120 +2076,181 @@ await db
 .select("*")
 .order("created_at",{ascending:false});
 
+
 const container =
 document.getElementById("adminProducts");
 
+
 if(error){
 
-container.innerHTML=
-`<div class="message show">${escapeHtml(error.message)}</div>`;
+container.innerHTML =
+`<div class="message show">
+${escapeHtml(error.message)}
+</div>`;
 
 return;
+
 }
+
 
 container.innerHTML="";
 
+
 if(!data || data.length===0){
 
-container.innerHTML=
-`<p style="color:#8f99a7">No products added yet.</p>`;
+container.innerHTML =
+`<p style="color:#8f99a7">
+No products added yet.
+</p>`;
 
 return;
+
 }
+
 
 data.forEach(product=>{
 
-const div=document.createElement("div");
+const div =
+document.createElement("div");
 
 div.className="admin-item";
 
+
 div.innerHTML=`
 
-<strong>${escapeHtml(product.name)}</strong>
+<strong>
+${escapeHtml(product.name)}
+</strong>
 
 <div class="order-details">
 
-Price: ₹${Number(product.price).toLocaleString("en-IN")}
+Price:
+₹${Number(product.price)
+.toLocaleString("en-IN")}
+
 <br>
 
-Category: ${escapeHtml(product.category || "")}
+Category:
+${escapeHtml(product.category || "")}
+
 <br>
 
-Stock: ${product.stock}
+Stock:
+${product.stock}
 
 </div>
 
+
 <div class="admin-product-actions">
 
-<button class="small-btn"
+<button
+class="small-btn"
 onclick="editProduct('${product.id}')">
 Edit
 </button>
 
-<button class="small-btn danger"
+<button
+class="small-btn danger"
 onclick="deleteProduct('${product.id}')">
 Delete
 </button>
 
 </div>
+
 `;
 
 container.appendChild(div);
 
 });
+
 }
 
+
+/* ADD PRODUCT */
 
 async function addProduct(){
 
 const name =
-document.getElementById("productName").value.trim();
+document.getElementById("productName")
+.value.trim();
 
 const description =
-document.getElementById("productDescription").value.trim();
+document.getElementById("productDescription")
+.value.trim();
 
 const price =
-Number(document.getElementById("productPrice").value);
+Number(
+document.getElementById("productPrice")
+.value
+);
 
 const old_price =
-Number(document.getElementById("productOldPrice").value) || null;
+Number(
+document.getElementById("productOldPrice")
+.value
+) || null;
 
 const category =
-document.getElementById("productCategory").value;
+document.getElementById("productCategory")
+.value;
 
 const image_url =
-document.getElementById("productImage").value.trim();
+document.getElementById("productImage")
+.value.trim();
 
 const stock =
-Number(document.getElementById("productStock").value) || 0;
+Number(
+document.getElementById("productStock")
+.value
+) || 0;
+
 
 if(!name || !price){
 
-alert("Product name and price are required.");
+alert(
+"Product name and price are required."
+);
 
 return;
+
 }
 
+
 const {error} =
-await db.from("products").insert({
+await db
+.from("products")
+.insert({
 
 name,
+
 description,
+
 price,
+
 old_price,
+
 category,
+
 image_url,
+
 stock
 
 });
 
+
 if(error){
 
 alert(error.message);
+
 return;
+
 }
 
-alert("Product added successfully.");
+
+alert(
+"Product added successfully."
+);
+
 
 document.getElementById("productName").value="";
 document.getElementById("productDescription").value="";
@@ -1624,10 +2258,15 @@ document.getElementById("productPrice").value="";
 document.getElementById("productOldPrice").value="";
 document.getElementById("productImage").value="";
 
+
 await loadProducts();
+
 await loadAdminProducts();
+
 }
 
+
+/* EDIT PRODUCT */
 
 async function editProduct(id){
 
@@ -1638,53 +2277,84 @@ await db
 .eq("id",id)
 .single();
 
+
 if(error){
 
 alert(error.message);
+
 return;
+
 }
 
+
 const name =
-prompt("Product name:",data.name);
+prompt(
+"Product name:",
+data.name
+);
 
 if(name===null)return;
 
+
 const price =
-prompt("Price:",data.price);
+prompt(
+"Price:",
+data.price
+);
 
 if(price===null)return;
 
+
 const stock =
-prompt("Stock:",data.stock);
+prompt(
+"Stock:",
+data.stock
+);
 
 if(stock===null)return;
+
 
 const {error:updateError} =
 await db
 .from("products")
 .update({
+
 name:name,
+
 price:Number(price),
+
 stock:Number(stock)
+
 })
 .eq("id",id);
+
 
 if(updateError){
 
 alert(updateError.message);
+
 return;
+
 }
+
 
 alert("Product updated.");
 
 await loadProducts();
+
 await loadAdminProducts();
+
 }
 
 
+/* DELETE PRODUCT */
+
 async function deleteProduct(id){
 
-if(!confirm("Delete this product?"))return;
+if(
+!confirm("Delete this product?")
+)return;
+
 
 const {error} =
 await db
@@ -1692,26 +2362,37 @@ await db
 .delete()
 .eq("id",id);
 
+
 if(error){
 
 alert(error.message);
+
 return;
+
 }
+
 
 alert("Product deleted.");
 
 await loadProducts();
+
 await loadAdminProducts();
+
 }
 
+
+/* ADMIN TABS */
 
 function showAdminTab(tab,button){
 
 document
 .querySelectorAll(".admin-tab")
-.forEach(btn=>btn.classList.remove("active"));
+.forEach(btn=>
+btn.classList.remove("active")
+);
 
 button.classList.add("active");
+
 
 document
 .getElementById("ordersTab")
@@ -1721,11 +2402,15 @@ document
 .getElementById("productsTab")
 .classList.add("hidden");
 
+
 document
 .getElementById(tab)
 .classList.remove("hidden");
+
 }
 
+
+/* SCROLL */
 
 function scrollToProducts(){
 
@@ -1738,31 +2423,46 @@ behavior:"smooth"
 }
 
 
+/* SEARCH */
+
 document
 .getElementById("searchInput")
-.addEventListener("input",function(){
+.addEventListener(
+"input",
+function(){
 
-const query=this.value.toLowerCase().trim();
+const query =
+this.value.toLowerCase().trim();
+
 
 document
 .querySelectorAll(".product")
 .forEach(product=>{
 
-const text=product.innerText.toLowerCase();
+const text =
+product.innerText.toLowerCase();
 
-product.style.display=
-text.includes(query) ? "" : "none";
+
+product.style.display =
+text.includes(query)
+? ""
+: "none";
 
 });
 
-});
+}
+);
 
+
+/* CATEGORY */
 
 document
 .querySelectorAll(".category")
 .forEach(button=>{
 
-button.addEventListener("click",function(){
+button.addEventListener(
+"click",
+function(){
 
 document
 .querySelectorAll(".category")
@@ -1770,15 +2470,19 @@ document
 btn.classList.remove("active");
 });
 
+
 this.classList.add("active");
 
-const category=this.dataset.category;
+
+const category =
+this.dataset.category;
+
 
 document
 .querySelectorAll(".product")
 .forEach(product=>{
 
-product.style.display=
+product.style.display =
 category==="all" ||
 product.dataset.category===category
 ? ""
@@ -1786,19 +2490,26 @@ product.dataset.category===category
 
 });
 
-});
+}
+);
 
 });
 
+
+/* INIT */
 
 async function init(){
 
 updateCartCount();
 
+
 const {data} =
 await db.auth.getSession();
 
-currentUser=data.session?.user || null;
+
+currentUser =
+data.session?.user || null;
+
 
 if(currentUser){
 
@@ -1806,14 +2517,20 @@ await afterLogin();
 
 }
 
+
 await loadProducts();
 
 }
 
 
-db.auth.onAuthStateChange(async(event,session)=>{
+/* AUTH STATE */
 
-currentUser=session?.user || null;
+db.auth.onAuthStateChange(
+async(event,session)=>{
+
+currentUser =
+session?.user || null;
+
 
 if(event==="PASSWORD_RECOVERY"){
 
@@ -1821,16 +2538,27 @@ openModal("resetModal");
 
 }
 
+
 if(currentUser){
 
-document.getElementById("accountButton").innerText =
-currentUser.email.toLowerCase()===OWNER_EMAIL.toLowerCase()
+document.getElementById(
+"accountButton"
+).innerText =
+
+currentUser.email
+.toLowerCase() ===
+OWNER_EMAIL.toLowerCase()
+
 ? "👑 Admin"
+
 : "👤 Account";
 
 }else{
 
-document.getElementById("accountButton").innerText="👤 Login";
+document.getElementById(
+"accountButton"
+).innerText =
+"👤 Login";
 
 }
 
